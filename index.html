@@ -25,24 +25,46 @@ $(document).ready(function() {
 		heightStyle: "content",
 		collapsible: true
 	});
+	$('#name').mouseenter(function() {
+		$('#engineer').fadeTo('fast', 1);
+		eActive = true;
+		$('#programmer').fadeTo('fast', 1);
+		pActive = true;
+		$('#musician').fadeTo('fast', 1);
+		mActive = true;
+		$('#leader').fadeTo('fast', 1);
+		lActive = true;
+	}).mouseleave(function() {
+		$('#engineer').fadeTo('fast', .5);
+		eActive = false;
+		$('#programmer').fadeTo('fast', .5);
+		pActive = false;
+		$('#musician').fadeTo('fast', .5);
+		mActive = false;
+		$('#leader').fadeTo('fast', .5);
+		lActive = false;
+	});
 	$('.hoverTile').mouseenter(function() {
 		$(this).fadeTo('fast', 1);
 		var id = this.getAttribute("id");
 		if (id == "engineer") eActive = true;
 		else if (id == "programmer") pActive = true;
 		else if (id == "musician") mActive = true;
+		else if (id == "leader") lActive = true;
 	}).mouseleave(function() {
 		$(this).fadeTo('fast', .5);
 		var id = this.getAttribute("id");
 		if (id == "engineer") eActive = false;
 		else if (id == "programmer") pActive = false;
 		else if (id == "musician") mActive = false;
+		else if (id == "leader") lActive = false;
 	});
 	draw();
 });
 var eActive = false;
 var pActive = false;
 var mActive = false;
+var lActive = false;
 var timer;
 var mNoteX = 0;
 var mNoteOgX = 55;
@@ -53,11 +75,11 @@ var mNoteRotatedY;
 var mAngle = -.698;
 var dx = 5;
 var cursor = 0;
-var textIndex = 0;
 var pOne = "console.";
 var pTwo = 'log("He';
 var pThree = "llo Wor";
 var pFour = 'ld!");';
+var textIndex = (pOne.length + pTwo.length + pThree.length + pFour.length) * 3;
 var lastText = "";
 var lastLine = 0;
 var tpt = new Image();
@@ -70,8 +92,16 @@ for (var i = 0; i < 4; i++) {
 	circuitImages[i] = new Image();
 	circuitImages[i].src = "images/engineer" + (i + 1) + ".png";
 }
+var leaderImages = new Array();
+for (var i = 0; i < 3; i++) {
+	leaderImages[i] = new Image();
+	leaderImages[i].src = "images/leader" + (i + 1) + ".png";
+}
 var switchTime = 10;
 var switchPosition = false;
+var talking = true;
+var talkTime = 10;
+var leaderIndex = 0;
 function drawBorder(ctx, txt) {
 	ctx.fillText(txt, 20, 20);
 	ctx.beginPath();
@@ -181,7 +211,13 @@ function draw() {
 	var circuitImage = circuitImages[(switchPosition ? 2 : 0) + (circuitIndex % 4 == 0 || circuitIndex % 4 == 1 ? 0 : 1)];
 	if (eActive) circuitIndex++;
 	eCtx.drawImage(circuitImage, 10, 15);
+	//Leader logic
+	if (leaderIndex % 14 == 0 && lActive) talking = !talking;
+	var leaderImage = leaderImages[(leaderIndex % 4 == 0 || leaderIndex % 4 == 1) ? (talking ? 1 : 2) : 0];
+	if (lActive) leaderIndex++;
+	lCtx.drawImage(leaderImage, 20, 25);
 	timer = setTimeout(draw, 50);
+	
 }
 </script>
 </head>
@@ -244,91 +280,23 @@ At The Ohio State University thus far I have strived to learn everything I can b
 		</div>
 		<div id = "tabs-4">
 			<div class = "accordion">
-				<h3>Full Resume</h3>
+				<h3>PDF Version</h3>
 				<div>
 					<p>
-					<iframe id="viewer" src = "/Viewer.js/#../resume.pdf" width='100%' height='800' allowfullscreen webkitallowfullscreen></iframe>
+					<iframe id="viewer" src = "/Viewer.js/#../resume.pdf" width='100%' height='400' allowfullscreen webkitallowfullscreen></iframe>
 					</p>
 				</div>
-				<h3>Summary</h3>
+				<h3>HTML Version</h3>
 				<div>
 					<p>
-						<ul>
-							<li>Incoming freshman at The Ohio State University from Lakota East High School, planning to study Electrical and Computer Engineering</li>
-							<li>Analytical, self-motivated, able to multi-task and successfully complete long-term projects</li>
-						</ul>
+					<iframe src = "resume.html" width = "100%" height = '400'></iframe>
 					</p>
 				</div>
-				<h3>Academic Achievements and Awards</h3>
-				<div>
-						<table><tr>
-							<td>GPA 4.55 (class rank 6/685)</td>
-							<td>ACT 34, SAT 2150</td></tr>
-							<tr><td>Department awards: Computer Science, Latin, Biology, Jazz, Honors Precalculus</td>
-							<td>Osper 1st level and ACS Chemistry Olympiad exam: Chemistry All-Star award</td></tr>
-							<tr><td>National Latin Exam, Gold Medal</td>
-							<td>National Merit Commended Scholar</td></tr>
-							<tr><td>Scored "5" on AP Computer Science A, AP Calculus BC, AP Physics C: Mechanics, AP Physics C: Electricity and Magnetism,
-								AP Chemistry, AP English Language and Composition</td><td></td></tr>
-						</table>
-				</div>
-				<h3>Work Experience</h3>
-				<div>
-					<h2><a href = "http://zakta.com/">Zakta</a> - Developer Intern</h2>
+				<h3>Downloads</h3>
 					<p>
-						<ul><li>June 2013 - Present</li>
-						<li>Currently working on writing connectors from other websites to the Zakta search engine in Java.</li></ul>
+						<a href = "resume.pdf">PDF</a><br>
+						<a href = "resume.tex">LaTeX Source</a>
 					</p>
-					<h2><a href = "http://mcclabel.com/">Multi Color Corporation</a> - Desktop Maintenance Intern</h2>
-					<p>
-						<ul><li>July 2012 - August 2012</li>
-						<li>Helped the IT help desk department with setting up new computers, solving employee issues, and repairing equipment.</li></ul>
-					</p>
-					<h2>Math Tutor</h2>
-					<p>
-						<ul><li>March 2013 - Present</li>
-						<li>Helping an algebra student understand and visualize math concepts in his online course.</li></ul>
-					</p>
-				</div>
-				<h3>Technology/Computer Skills</h3>
-				<div>
-					<table>
-						<tr><td>C# (expert)</td><td>Java (intermediate)</td></tr>
-						<tr><td>HTML, CSS, Javascript, PHP (intermediate)</td><td>Android App Development (novice)</td></tr>
-						<tr><td>Autodesk Inventor (intermediate)</td><td>National Instruments LabVIEW (intermediate)</td></tr>
-						<tr><td>FIRST Robotics Controls/Wiring (intermediate)</td><td>GIMP (novice)</td></tr>
-						<tr><td>Python, C++ (novice)</td><td>Linux (novice)</td></tr>
-					</table>
-				</div>
-				<h3>Academic and Community Activities</h3>
-				<div>
-					<table>
-						<tr><td>National Honor Society, service subcommittee leader</td><td>Mu Alpha Theta (Mathematics Honor Society)</td></tr>
-						<tr><td>FIRST Robotics, CAD team leader and Controls team member</td><td>Student Organized Service, board member</td></tr>
-						<tr><td>American Computer Science League (ACSL)*</td><td>Miami ACM Programming Competition</td></tr>
-						<tr><td>Technology Student Organization TEAM+S Competition**</td><td>West Chester Youth Arts Council</td></tr>
-					</table>
-					<p>
-						*Scored 35 and 37 out of 40 in consecutive years in a competition divided into programming and low-level computing problems, then placed 5th in the international All-Star Competition
-					</p>
-					<p>
-						**Placed 1st at the regional level in 2013
-					</p>
-				</div>
-				<h3>Music Activities and Awards</h3>
-				<div>
-					<table>
-						<tr><td>Lakota East Symphonic Winds, 1st chair</td><td>West Chester Bravo Award</td></tr>
-						<tr><td>Lakota Eastside Jazz Ensemble, lead trumpet</td><td>Cincinnati Youth Wind Ensemble</td></tr>
-						<tr><td>Tri-State Trumpet Ensemble and Jazz Ensemble</td><td>OMEA All-State Jazz Ensemble</td></tr>
-						<tr><td>Lakota East Marching Band, Section Leader</td><td>OMEA District 13 Honor Band and Honor Jazz Band</td></tr>
-						<tr><td>CCM Cincinnati Youth Jazz Orchestra</td><td>Lakota East Director’s Award</td></tr>
-					</table>
-				</div>
-				<h3>References</h3>
-				<div>
-					<p>References are available upon request.</p>
-				</div>
 			</div>
 		</div>
 	</div>
