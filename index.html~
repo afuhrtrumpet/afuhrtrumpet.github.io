@@ -245,10 +245,10 @@ function draw() {
 		</ul>
 		<div id = "tabs-1">
 			<div class = "accordion">
-				<h3>Post Title</h3>
+				<h3>First Update</h3>
 				<div>
-					<p>Post Content</p>
-					<i>Posted on Date</i>
+					<p>Welcome anyone visiting my website for the first time! I currently have 5 projects listed, a bio, and resume, and plan to add more content in the near future. For now, enjoy, look at my Github, and make sure to contact me with any ideas of improvements you have in mind.</p>
+					<i>Posted on 12/16/13</i>
 					</div>
 			</div>
 		</div>
