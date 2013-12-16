@@ -7,6 +7,8 @@
 <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<script src="lightbox/js/lightbox-2.6.min.js"></script>
+<link href="lightbox/css/lightbox.css" rel="stylesheet" />
 <script>
 $(document).ready(function() {
 	//GET BROWSER WINDOW HEIGHT
@@ -220,6 +222,7 @@ function draw() {
 	
 }
 </script>
+<base target="_blank">
 </head>
 <body>
 <div id = "sidebar">
@@ -280,15 +283,45 @@ At The Ohio State University thus far I have strived to learn everything I can b
 			<div class = "accordion">
 				<h3>Christmas Lighting, Arduino Style</h3>
 				<div>
-					<p>TBA</p>
+					<p>This project uses an Arduino to control both EL wire and an RGB (non-addressable) LED strip simultaneously. It also reads input from a potentiometer, two buttons, a PIR sensor, and displays text to an LCD screen. The wiring diagram is show below:<br>
+					<img src = "images/christmaslights.png" width = "100%"><br>
+					The source code for each program can be found <a href = "https://github.com/afuhrtrumpet/arduinochristmaslights">here</a>.<br>
+					</p>
+					<p>The first program does not utilize the buttons or LCD. It gradually fades the LED strip through the entire color spectrum and blinks the EL wire in an interval specified by the position of the potentiometer. After doing this for a certain amount of time, both components shut off to save power. They are reactivated when the PIR sensor detects motion.</p>
+					<p>The second program performs similarly to the first program, but at the start it asks the user to input a sequence of colors by twisting the potentiometer to specify levels of red, green, and blue. After each color has been entered, the user can hit the bottom button to add another color or the top button to finish and start the sequence. Then, the EL wire performs as described in the first program while the LED strip switches between the user-defined sequence of colors in the same time interval the EL wire blinks. Both lights shut off after a certain period of time to wait for motion. The user can also press the top button during the light sequence to enter a new sequence of colors.</p>
+					<p>
+					I had my fair share of problems and issues during the implementation of this project. Here are some of the ones I solved along the way:
+					<ul><li>The diode on the Arduino burned off due to a short circuit of the 12V power required to light the LED strip. I discovered that the other end of the strip connectors were also wired to ground, causing the short circuit.</li>
+					<li>The Arduino could not supply the power required to control the LED strip or EL wire. To solve this, I used an relay to switch on and off the power of the 9V inverter to the EL wire and hooked a 12V power supply up to the Arduino and used N-channel MOSFETs to control the power.</li></ul>
+					And some improvements that could still be made:
+					<ul><li>Two potentiometers should be used: one to set the colors, and one to control the blink delay. In the current configuration, for example, if blue is set to 0 in the last color added and the user forgets to set the potentiometer back to a non-zero value, the blinking occurs faster than the relay can handle, causing a buzzing sound.</li>
+					<li>The option to have the LED strip fade could still exist, or an option to have the strip fade between colors could be added.</li>
+					<li>For some reason when setting colors, a low blue value makes the LED strip blink rapidly between a blue and non-blue color.</li>
+					<li>The relay used to control the EL wire is noisy. Alternate control methods could be looked into for this.</li></ul>
+					</p>
 				</div>
 				<h3>Web-Based Alarm Clock</h3>
 				<div>
-					<p>TBA</p>
+					<p>
+					This project was created as a team of 4 for the OSU 2013 hackathon and can be found <a href = "https://github.com/afuhrtrumpet/OSUHackathon2013">here</a>.<br>
+					In this Windows application. The user can customize an alarm clock sequence to read text or web data by adding modules and delays in a timeline. The modules included are weather, simple text, RSS, and calendar, but many more could be created simply by implementing the IModule interface. After that, they simply must be put into the project directory--no modification of any of the program files needed.</p>
+					<p>Future goals for this project include porting it to mobile (where it really should belong, but no one on the team was experienced in mobile development) platforms such as Android and Windows Phone, as well as adding more modules and cleaning up the interface to be more user-friendly. The application could also take voice commands, which we considered adding at the hackathon but Microsoft's speech-to-text library included in C# was not accurate enough.</p>
+					<p>Images shown below:<br>
+  					<a href="images/alarmclockpics/initialscreen.png" data-lightbox="alarmclockpics" title="Initial screen"><img src="images/alarmclockpics/initialscreen.png" width="16%"/></a>
+  					<a href="images/alarmclockpics/weathersetup.png" data-lightbox="alarmclockpics" title="Setting up a weather module"><img src="images/alarmclockpics/weathersetup.png" width="16%"/></a>
+  					<a href="images/alarmclockpics/rsssetup.png" data-lightbox="alarmclockpics" title="Setting up an RSS module"><img src="images/alarmclockpics/rsssetup.png" width="16%"/></a>
+  					<a href="images/alarmclockpics/clockadjust.png" data-lightbox="alarmclockpics" title="Adjusting the alarm time"><img src="images/alarmclockpics/clockadjust.png" width="16%"/></a>
+  					<a href="images/alarmclockpics/clockplaying.png" data-lightbox="alarmclockpics" title="Playing the sequence of modules with a delay added"><img src="images/alarmclockpics/clockplaying.png" width="16%"/></a>
+					</p>
 				</div>
 				<h3>IR Frequency Detector</h3>
 				<div>
-					<p>TBA</p>
+					<p>
+						This project was created with another person for the first semester of Fundamentals of Engineering Honors at OSU and can be found <a href = "https://github.com/afuhrtrumpet/SDP">here.</a><br>
+						The goal of this project was to detect one of 5 different possible frequencies using the FEH Proteus board and an IR receiver. The documentation is shown below:<br>
+						<iframe id="viewer" src = "/Viewer.js/#../documents/SDP Documentation.odt" width='100%' height='400' allowfullscreen webkitallowfullscreen></iframe><br>
+						(If you cannot see it in the viewer, you can download it in <a href = "documents/SDP Documentation.docx">Word format</a> or <a href = "documents/SDP Documentation.odt">open document format</a>)
+					</p>
 				</div>
 				<h3>Refrigerator Calendar (in progress)</h3>
 				<div>
@@ -308,7 +341,7 @@ At The Ohio State University thus far I have strived to learn everything I can b
 				<h3>Musical Compositions</h3>
 				<div>
 					<p>Alongside engineering and programming projects, I also compose music.</p>
-					<p>Here are the songs I made in Rytmik and Rytmik: Rock Edition (DSiWare tools):<br>
+					<p>Here are the songs I made in Rytmik and Rytmik: Rock Edition (DSiWare applications):<br>
 						<ul>
 							<li>Doppler Jam:<br>
 							Based entirely on the Doppler effect, this piece alternates between two keys a half step apart throughout its duration.<br>
@@ -332,19 +365,19 @@ At The Ohio State University thus far I have strived to learn everything I can b
 				<h3>PDF Version</h3>
 				<div>
 					<p>
-					<iframe id="viewer" src = "/Viewer.js/#../resume.pdf" width='100%' height='400' allowfullscreen webkitallowfullscreen></iframe>
+					<iframe id="viewer" src = "/Viewer.js/#../documents/resume.pdf" width='100%' height='400' allowfullscreen webkitallowfullscreen></iframe>
 					</p>
 				</div>
 				<h3>HTML Version</h3>
 				<div>
 					<p>
-					<iframe src = "resume.html" width = "100%" height = '400'></iframe>
+					<iframe src = "documents/resume.html" width = "100%" height = '400'></iframe>
 					</p>
 				</div>
 				<h3>Downloads</h3>
 					<p>
-						<a href = "resume.pdf">PDF</a><br>
-						<a href = "resume.tex">LaTeX Source</a>
+						<a href = "documents/resume.pdf">PDF</a><br>
+						<a href = "documents/resume.tex">LaTeX Source</a>
 					</p>
 			</div>
 		</div>
