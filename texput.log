@@ -1,21 +1,27 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.8.26)  13 JAN 2014 18:09
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=latex 2014.1.25)  1 MAY 2014 11:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**resume.tex
+**\makeatletter\def\HCode{\futurelet\HCode\HChar}\def\HChar{\ifx"\HCode\def\HCo
+de"##1"{\Link##1}\expandafter\HCode\else\expandafter\Link\fi}\def\Link#1.a.b.c.
+{\g@addto@macro\@documentclasshook{\RequirePackage[#1,html]{tex4ht}}\let\HCode\
+documentstyle\def\documentstyle{\let\documentstyle\HCode\expandafter\def\csname
+ tex4ht\endcsname{#1,html}\def\HCode####1{\documentstyle[tex4ht,}\@ifnextchar[{
+\HCode}{\documentstyle[tex4ht]}}}\makeatother\HCode .a.b.c.\input  documents/re
+sume.
 
 ! Emergency stop.
-<*> resume.tex
-              
+<*> ...ther\HCode .a.b.c.\input  documents/resume.
+                                                  
 End of file on the terminal!
 
  
 Here is how much of TeX's memory you used:
- 4 strings out of 493485
- 109 string characters out of 3143526
- 47818 words of memory out of 3000000
- 3412 multiletter control sequences out of 15000+200000
- 3640 words of font info for 14 fonts, out of 3000000 for 9000
+ 8 strings out of 493308
+ 132 string characters out of 6139931
+ 51682 words of memory out of 5000000
+ 3564 multiletter control sequences out of 15000+600000
+ 3640 words of font info for 14 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 0i,0n,0p,32b,6s stack positions out of 5000i,500n,10000p,200000b,50000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 4i,0n,3p,480b,8s stack positions out of 5000i,500n,10000p,200000b,80000s
+No pages of output.
