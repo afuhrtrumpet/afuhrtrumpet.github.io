@@ -1,0 +1,69 @@
+html, body {
+	height: 100%;
+	margin: 0;
+	font-family: 'RobotoDraft', sans-serif;
+	background: #CCC;
+	background-image:url('images/circuit-background.png');
+	background-repeat: repeat;
+}
+.scarlet {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	height: 350px;
+	background: #ff4444;
+	color: #fff;
+	text-align: center;
+}
+#tagline {
+	font-size: 150%;
+}
+core-header-panel {
+	height: 100%;
+}
+core-toolbar {
+	height: 100%;
+	color: #fff;
+	background: #ff4444;
+	text-align: center;
+}
+core-toolbar h1 {
+	padding: 5px;
+}
+core-toolbar i {
+	text-align: right;
+}
+paper-tabs {
+	background: #aa0000;
+	color: #eeeeee;
+}
+core-menu {
+	float: left;
+	width: 20%;
+	margin: 0px;
+	padding: 0px;
+}
+core-item {
+	margin: 0px;
+	padding: 0px;
+}
+core-item:nth-child(odd) {
+	background: #fff;
+}
+core-item:nth-child(even) {
+	background: #f44;
+}
+info-card {
+	float: right;
+	width: 75%;
+	margin: 10px;
+}
+.top-right-fab {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	z-index: 999;
+	background: #ddd;
+	color: #000;
+}

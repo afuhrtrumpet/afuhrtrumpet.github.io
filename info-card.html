@@ -1,0 +1,28 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/paper-shadow/paper-shadow.html">
+
+<polymer-element name="info-card" attributes="show">
+	<template>
+		<style>
+			:host {
+				display: block;
+				width: 100%;
+				background: #fff;
+			}
+			.card-header {
+				background: #4f4;
+			}
+		</style>
+
+		<div layout vertical center class="card-header">
+			<content select="h2"></content>
+		</div>
+		<content class="content"></content>
+		<paper-shadow z="1"></paper-shadow>
+	</template>
+
+	<script>
+		Polymer('info-card', {
+		});
+	</script>
+</polymer-element>
