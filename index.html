@@ -1,8 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="mainPage">
 <head>
 	<title>Alex Fuhr</title>
 	<script src="bower_components/platform/platform.js"></script>
+	<link rel="stylesheet" href="bower_components/flexslider/flexslider.css" type="text/css">
+	<script src="bower_components/jquery/jquery.js"></script>
+	<script src="bower_components/flexslider/jquery.flexslider.js"></script>
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="app.js"></script>
 	<link rel="import" href="bower_components/font-roboto/roboto.html">
 	<link rel="import" href="bower_components/core-header-panel/core-header-panel.html">
 	<link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
@@ -15,9 +20,8 @@
 	<link rel="import" href="bower_components/core-item/core-item.html">
 	<link rel="import" href="info-card.html">
 	<link rel="stylesheet" href="style.css" type="text/css">
-
 </head>
-<body>
+<body ng-controller="ctrl">
 <core-header-panel>
 	<core-toolbar class="medium-tall">
 	<div flex>
@@ -32,15 +36,21 @@
 		<paper-tab>Resume</paper-tab>
 	</paper-tabs>
 	<paper-shadow z="2"></paper-shadow>
-	<div content>
+	<div content ng-if="page">
 		<core-menu>
-			<core-item label="Item 1"></core-item>
-			<core-item label="Item 2"></core-item>
+			<core-item ng-repeat="card in page.cards" label={{card.title}}></core-item>
 			<paper-shadow z="1"></paper-shadow>
 		</core-menu>
-		<info-card>
-			<h2>Lights</h2>
-			<p>This is a thing</p>
+		<info-card ng-repeat="card in page.cards" headerColor="{{card.color}}">
+			<h2>{{card.title}}</h2>
+			<p ng-repeat="paragraph in card.paragraphs" ng-bind-html="paragraph | unsafe"></p>
+			<div class="flexslider" ng-if="card.images">
+				<ul class="slides">
+					<li ng-repeat="image in card.images">
+						<img src="{{image}}">
+					</li>
+				</ul>
+			<div>
 		</info-card>
 	</div>
 </core-header-panel>

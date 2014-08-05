@@ -1,0 +1,18 @@
+{
+	"cards": [
+	{
+		"title": "Resume",
+		"color": "#f4f",
+		"paragraphs": [
+			"<iframe src='http://docs.google.com/gview?url=http://afuhrtrumpet.github.io/documents/resume.pdf&embedded=true' style='width:100%; height:500px;' frameborder='0'></iframe>"
+		]
+	},
+	{
+		"title": "Downloads",
+		"color": "#ff4",
+		"paragraphs": [
+			"<a href = 'documents/resume.pdf'>PDF</a><br><a href = 'documents/resume.tex'>LaTeX Source</a>"
+		]
+	}
+	]
+}

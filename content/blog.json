@@ -1,0 +1,13 @@
+{
+	"cards": [
+		{
+		"title": "8/4/14: Website Revamp!",
+		"color": "#88f",
+		"paragraphs": [
+			"So the website looks a bit different now.",
+			"I decided to switch from the old jQuery-UI based layout to one using Google's Polymer UI components and AngularJS. Polymer is definitely something new to me, but I learned it throughout last week and really enjoy the approach it takes in making web components modular, much like the old days of HTML, and can definitely see it being successful in the future. Right now some of the default components (like the top bar you see) can be a bit difficult to customize, but they are also using the flexbox layout system, which I am currently getting myself familiar with.",
+			"With AngularJS, I am attempting to derive all of this site's content from JSON and loading it into the Polymer-based template I have created. I have a JSON format that works well so far, but it will be interesting to see if that continues to suit my needs--I may even implement a web editor for this in the future."
+		]
+	}
+	]
+}

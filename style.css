@@ -28,6 +28,9 @@ core-toolbar {
 	background: #ff4444;
 	text-align: center;
 }
+.profilepic {
+	height: 50px;
+}
 core-toolbar h1 {
 	padding: 5px;
 }

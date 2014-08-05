@@ -1,5 +1,7 @@
 <link rel="import" href="bower_components/polymer/polymer.html">
 <link rel="import" href="bower_components/paper-shadow/paper-shadow.html">
+<link rel="import" href="bower_components/core-icon-button/core-icon-button.html">
+<script src="bower_components/jquery/jquery.min.js">></script>
 
 <polymer-element name="info-card" attributes="show">
 	<template>
@@ -9,20 +11,34 @@
 				width: 100%;
 				background: #fff;
 			}
-			.card-header {
-				background: #4f4;
+			.card-header h2 {
+				text-align: center;
+			}
+			.content {
+				-webkit-transition: all 2s;
+				transition: all 2s;
 			}
 		</style>
 
-		<div layout vertical center class="card-header">
-			<content select="h2"></content>
+		<div layout horizontal justified class="card-header" style="background: {{headerColor}}">
+			<content flex select="h2"></content>
+			<core-icon-button icon="expand-more" on-click={{toggleContent}}></core-icon-button>
 		</div>
-		<content class="content"></content>
+		<div class="content" hidden?={{!showContent}}>
+			<content></content>
+		</div>
 		<paper-shadow z="1"></paper-shadow>
 	</template>
 
 	<script>
 		Polymer('info-card', {
+			publish: { 
+				showContent: { value: true },
+				headerColor: { value: "#4f4", reflective: true }
+			},
+			toggleContent: function(event, detail, sender) {
+				this.showContent = !this.showContent;
+			}
 		});
 	</script>
 </polymer-element>
