@@ -46,6 +46,7 @@ core-menu {
 	width: 20%;
 	margin: 0px;
 	padding: 0px;
+	position: fixed;
 }
 core-item {
 	margin: 0px;

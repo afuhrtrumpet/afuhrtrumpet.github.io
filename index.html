@@ -27,15 +27,17 @@
 	<core-toolbar class="medium-tall">
 	<div flex>
 	<h1>Alex Fuhr</h1>
+	</div>
 	<i>engineer, developer, maker</i>
+	<div class="bottom fit" horizontal layout>
+		<paper-tabs selected="0" flex>
+			<paper-tab>Blog</paper-tab>
+			<paper-tab>About Me</paper-tab>
+			<paper-tab>Projects</paper-tab>
+			<paper-tab>Resume</paper-tab>
+		</paper-tabs>
 	</div>
 	</core-toolbar>
-	<paper-tabs class="bottom indent">
-		<paper-tab>Blog</paper-tab>
-		<paper-tab>About Me</paper-tab>
-		<paper-tab>Projects</paper-tab>
-		<paper-tab>Resume</paper-tab>
-	</paper-tabs>
 	<paper-shadow z="2"></paper-shadow>
 	<div content ng-if="page">
 		<core-menu>
