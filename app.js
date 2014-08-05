@@ -1,10 +1,5 @@
-$(window).load(function() {
-	$('.flexslider').flexslider({
-		animation: "slide"
-	});
-});
 
-var app = angular.module('mainPage', []);
+var app = angular.module('mainPage', ['angular-flexslider']);
 
 app.filter('unsafe', function($sce) {
 	return function(val) {
@@ -23,7 +18,6 @@ app.controller('ctrl', ['$scope', '$http', function($scope, $http) {
 			if (!$scope.$$phase) {
 				$scope.$apply();
 			}
-			console.log($scope.page);
 		});
 	};
 

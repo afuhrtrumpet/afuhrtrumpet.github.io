@@ -7,6 +7,7 @@
 	<script src="bower_components/jquery/jquery.js"></script>
 	<script src="bower_components/flexslider/jquery.flexslider.js"></script>
 	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-flexslider/angular-flexslider.js"></script>
 	<script src="app.js"></script>
 	<link rel="import" href="bower_components/font-roboto/roboto.html">
 	<link rel="import" href="bower_components/core-header-panel/core-header-panel.html">
@@ -44,13 +45,11 @@
 		<info-card ng-repeat="card in page.cards" headerColor="{{card.color}}">
 			<h2>{{card.title}}</h2>
 			<p ng-repeat="paragraph in card.paragraphs" ng-bind-html="paragraph | unsafe"></p>
-			<div class="flexslider" ng-if="card.images">
-				<ul class="slides">
-					<li ng-repeat="image in card.images">
-						<img ng-src="{{image}}">
-					</li>
-				</ul>
-			<div>
+			<flex-slider ng-if="card.images" animation="slide" slide="img in card.images">
+				<li>
+					<img ng-src="{{img}}">
+				</li>
+			</flex-slider>
 		</info-card>
 	</div>
 </core-header-panel>
