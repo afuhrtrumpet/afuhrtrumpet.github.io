@@ -22,6 +22,9 @@ html, body {
 core-header-panel {
 	height: 100%;
 }
+[drawer] {
+	background-image:url('images/triangular.png');
+}
 core-toolbar {
 	height: 100%;
 	color: #fff;
@@ -41,31 +44,24 @@ paper-tabs {
 	background: #aa0000;
 	color: #eeeeee;
 }
-core-menu {
-	float: left;
-	width: 20%;
-	margin: 0px;
-	padding: 0px;
-	position: fixed;
-}
 core-item {
 	margin: 0px;
 	padding: 0px;
 }
 core-item:nth-child(odd) {
-	background: #fff;
+	background: rgba(255,255,255,0.5);
 }
 core-item:nth-child(even) {
-	background: #f44;
+	background: rgba(255,0,0,0.5);
 }
 info-card {
-	float: right;
-	width: 75%;
+	float: left;
+	width: 100%;
 	margin: 10px;
 }
-@media (min-width: 800px) {
+@media (min-width: 1000px) {
 	info-card {
-		width: 30%;
+		width: 46%;
 	}
 }
 .top-right-fab {
