@@ -23,12 +23,12 @@ core-header-panel {
 	height: 100%;
 }
 [drawer] {
-	background-image:url('images/triangular.png');
+	background: #ccc;
 }
 core-toolbar {
 	height: 100%;
 	color: #fff;
-	background: #ff4444;
+	background: #cc4444;
 	text-align: center;
 }
 .profilepic {
@@ -48,10 +48,14 @@ core-item {
 	margin: 0px;
 	padding: 0px;
 }
-core-item:nth-child(odd) {
+core-menu > a {
+	text-decoration: none;
+	color: inherit;
+}
+core-menu > a:nth-child(odd) {
 	background: rgba(255,255,255,0.5);
 }
-core-item:nth-child(even) {
+core-menu > a:nth-child(even) {
 	background: rgba(255,0,0,0.5);
 }
 info-card {
@@ -61,7 +65,7 @@ info-card {
 }
 @media (min-width: 1000px) {
 	info-card {
-		width: 46%;
+		width: 47%;
 	}
 }
 .top-right-fab {

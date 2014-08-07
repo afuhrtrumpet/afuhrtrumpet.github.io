@@ -11,6 +11,9 @@
 				width: 100%;
 				background: #fff;
 			}
+			.card-header {
+				background: #c44;
+			}
 			.card-header h2 {
 				text-align: center;
 			}
@@ -20,14 +23,14 @@
 			}
 		</style>
 
-		<div layout horizontal justified class="card-header" style="background: {{headerColor}}">
+		<div layout horizontal justified class="card-header">
 			<content flex select="h2"></content>
 			<core-icon-button icon="expand-more" on-click={{toggleContent}}></core-icon-button>
 		</div>
 		<div class="content" hidden?={{!showContent}}>
 			<content></content>
 		</div>
-		<paper-shadow z="1"></paper-shadow>
+		<paper-shadow z="3"></paper-shadow>
 	</template>
 
 	<script>

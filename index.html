@@ -45,12 +45,12 @@
 		<core-drawer-panel>
 		<div drawer>
 			<core-menu>
-				<core-item ng-repeat="card in page.cards" label={{card.title}}></core-item>
+			<a ng-repeat="card in page.cards" href="#{{card.title}}"><core-item label={{card.title}}></core-item></a>
 			</core-menu>
-			<paper-shadow z="3"></paper-shadow>
+			<paper-shadow z="5"></paper-shadow>
 		</div>
 		<div main>
-			<info-card ng-repeat="card in page.cards" headerColor="{{card.color}}">
+			<info-card id="{{card.title}}" ng-repeat="card in page.cards" headerColor="{{card.color}}">
 				<h2>{{card.title}}</h2>
 				<p ng-repeat="paragraph in card.paragraphs" ng-bind-html="paragraph | unsafe"></p>
 				<flex-slider ng-if="card.images" animation="slide" slide="img in card.images">
