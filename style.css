@@ -60,7 +60,7 @@ core-menu > a:nth-child(even) {
 }
 info-card {
 	float: left;
-	width: 100%;
+	width: 97%;
 	margin: 10px;
 }
 @media (min-width: 1000px) {
