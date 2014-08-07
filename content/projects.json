@@ -1,6 +1,51 @@
 {
 	"cards": [
-		{
+	{
+		"title": "DAE Sickness?",
+		"color": "#4f4",
+		"paragraphs": [
+			"This project was created at Cardinal Health Codefest, and won the popular vote prize.",
+			"It provides an information service to patients, containing a \"bulletin board\" where they can share or see advice from others, a buddy system in which two patients with the same condition can sign up to email each other, and online news information about recent developments in the condition."
+		],
+		"images": [
+			"images/daesickness/searchbar.png",
+			"images/daesickness/bulletin.png",
+			"images/daesickness/online.png"
+		]
+	},
+	{
+		"title": "IRC Bots",
+		"color": "#f4f",
+		"paragraphs": [
+			"Using node.js and <a href='https://github.com/martynsmith/node-irc'> this library, I created several IRC bots to do several different tasks. This helped me get used to using node.js and several other Javascript libraries.",
+			"The bots:<ul><li><a href='https://github.com/afuhrtrumpet/quotesbot'>Quotes Bot</a> - A bot for keeping track of things said at meetups. The start and stop functionality is controlled by PMs from its owner, and the recording of quotes also happens through PM to prevent excessive messages in chat. It also connects with MongoDB to persistently store quotes via the Mongoose library.</li><li><a href='https://github.com/afuhrtrumpet/octocat-bot'>Octocat</a> - A bot for retrieving a Github search result. Operates on the command 'gh [search term]', and reports the first result in chat. Used the Github API via the requests package in node.</li><li><a href='https://github.com/afuhrtrumpet/hangman-bot'>Hangman Bot</a> - Plays a game of hangman with members of the chat. Can take guesses for both letter and word, show status, and show remaining letters."
+		]
+	},
+	{
+		"title": "Arduino Ocarina",
+		"color": "#ff4",
+		"paragraphs": [
+			"Using a Sparkfun MIDI shield and a Wii Nunchuk, I replicated the ocarina from the Legend of Zelda series with an Arduino. The code for this is located <a href='https://github.com/afuhrtrumpet/arduino-ocarina'>here</a>, and contains songs from both Ocarina of Time and Majora's Mask",
+			"I ran into several interesting challenges with this. Parsing songs with JSON was not the easiest task to do, and I was not initially able to do this with the existing libraries as of January, but used a new library that appeared several months later to parse JSON strings. Memory management was (and still is) also an issue--the program was mysteriously not running properly until I tried running it on an Arduino Mega. I may still look into ways to cut down on memory usage, but the variety of songs held in memory already make this difficult."
+		]
+	},
+	{
+		"title": "OSU FEH Robot",
+		"color": "#888",
+		"paragraphs": [
+			"This robot was created as a part of the FEH (Fundamentals of Engineering Honors) robot competition at the Ohio State University. The robot won first place in the elimination round of the competition with a score of 89 out of 100 possible points.",
+			"The tasks required included pressing a button repeatedly, turning a switch from right to left, picking up a skid, placing the skid in a container, dropping a small spoon in a bin identified by a color on the floor, and pulling out a pin lodged in a pipe.",
+			"I worked on the code and testing of this robot. The code is located <a href='https://github.com/afuhrtrumpet/FEHRobotCode'>here</a>. It was written in C++ for the internally developed Proteus board, and utilized a modular sequence of steps using input from multiple sensors."
+		],
+		"images": [
+			"images/robotpics/robot.png",
+			"images/robotpics/team.jpg",
+			"images/robotpics/cad.png",
+			"images/robotpics/finals.jpg",
+			"images/robotpics/awards.jpg"
+		]
+	},
+	{
 		"title": "Christmas Lighting, Arduino Style",
 		"color": "#2d2",
 		"paragraphs": [
@@ -21,9 +66,9 @@
 		"title": "Web-Based Alarm Clock",
 		"color": "#f4f",
 		"paragraphs": [
-					"This project was created as a team of 4 for the OSU 2013 hackathon and can be found <a href = 'https://github.com/afuhrtrumpet/OSUHackathon2013'>here</a>.",
-					"In this Windows application. The user can customize an alarm clock sequence to read text or web data by adding modules and delays in a timeline. The modules included are weather, simple text, RSS, and calendar, but many more could be created simply by implementing the IModule interface. After that, they simply must be put into the project directory--no modification of any of the program files needed.",
-					"Future goals for this project include porting it to mobile (where it really should belong, but no one on the team was experienced in mobile development) platforms such as Android and Windows Phone, as well as adding more modules and cleaning up the interface to be more user-friendly. The application could also take voice commands, which we considered adding at the hackathon but Microsoft's speech-to-text library included in C# was not accurate enough."
+			"This project was created as a team of 4 for the OSU 2013 hackathon and can be found <a href = 'https://github.com/afuhrtrumpet/OSUHackathon2013'>here</a>.",
+			"In this Windows application. The user can customize an alarm clock sequence to read text or web data by adding modules and delays in a timeline. The modules included are weather, simple text, RSS, and calendar, but many more could be created simply by implementing the IModule interface. After that, they simply must be put into the project directory--no modification of any of the program files needed.",
+			"Future goals for this project include porting it to mobile (where it really should belong, but no one on the team was experienced in mobile development) platforms such as Android and Windows Phone, as well as adding more modules and cleaning up the interface to be more user-friendly. The application could also take voice commands, which we considered adding at the hackathon but Microsoft's speech-to-text library included in C# was not accurate enough."
 		],
 		"images": [
 			"images/alarmclockpics/clockadjust.png",
