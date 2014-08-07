@@ -28,7 +28,7 @@ core-header-panel {
 core-toolbar {
 	height: 100%;
 	color: #fff;
-	background: #cc4444;
+	background: #aa0000;
 	text-align: center;
 }
 .profilepic {
@@ -41,7 +41,7 @@ core-toolbar i {
 	text-align: right;
 }
 paper-tabs {
-	background: #aa0000;
+	background: #cc4444;
 	color: #eeeeee;
 }
 core-item {
