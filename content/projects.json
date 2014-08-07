@@ -1,6 +1,33 @@
 {
 	"cards": [
 	{
+		"title": "Meteor Flies Drone",
+		"color": "#4ff",
+		"paragraphs": [
+			"This project was created at the 2014 Meteor Summer Hackathon. It won in the category Most Entertaining. The code for this can be found <a href='https://github.com/afuhrtrumpet/meteorhack14'>here</a>.",
+			"This app utilizes the Twitch Plays Pokemon method of control to allow many users to control a drone at once. It provides two modes of control: anarchy (queue of commands) and democracy (popular voted command is used). In order to host this on Meteor's servers, PubNub was used to communicate between the Meteor server and a client server that is controlling the drone. The app was also demoed live at Meteor Devshop SF in July 2014."
+		],
+		"images": [
+			"images/meteorhack/drone_crop.jpg",
+			"images/meteorhack/login.png",
+			"images/meteorhack/anarchy.png",
+			"images/meteorhack/democracy.png"
+		]
+	},
+	{
+		"title": "KivaMe",
+		"color": "#88f",
+		"paragraphs": [
+			"This project was created at HackSummit 2014 in San Francisco. I worked on a team of 10 for this project, and managed the API layer in a Django application. The backend can be found <a href='https://github.com/afuhrtrumpet/hacksummit'>here</a> and the frontend can be found <a href='https://github.com/kvindasAB/kivame-ui'>here</a>.",
+			"This app was created in response to the Kiva challenge at the hackathon which involved creating a recommendation engine and UI for loans on Kiva that read data from various sources including Facebook. The team (because it was large) decided to split the application into separate frontend and backend servers to also make way for an iOS app. The application uses a Netflix-style UI to display different loan categories to the user, and utilizes an API that can be easily configurable to accomodate different categories."
+		],
+		"images": [
+			"images/kivame/demo.jpeg",
+			"images/kivame/loginscreen.png",
+			"images/kivame/mockup2.jpg"
+		]
+	},
+	{
 		"title": "DAE Sickness?",
 		"color": "#4f4",
 		"paragraphs": [
