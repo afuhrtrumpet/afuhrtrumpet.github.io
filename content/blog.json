@@ -1,6 +1,21 @@
 {
 	"cards": [
-		{
+	{
+		"title": "8/6/14: More Updates + End of Summer",
+		"color": "#88f",
+		"paragraphs": [
+			"Changed some design aspects of the site, added more projects, updated the bio. Basically everything I've been doing within the last few months.",
+			"As of recently, I am at the end of a summer internship at BloomReach doing web development using their big data technologies. I had a great time working for the company and enjoyed experiencing startup culture, as well as the rest of the bay area! From many of the meetups, events, and hackathons I attended, I had a blast and enjoyed learning about new technologies as well as new ways to use the technologies I was already familiar with. I will definitely take my time here as motivation to bring myself towards greatness even further while at my second year of school.",
+			"Some of the photos of the things I have been doing for the past few months (including winning a robot competition at OSU) are shown below."
+		],
+		"images": [
+			"images/meteorhack/drone_crop.jpg",
+			"images/robotpics/team.jpg",
+			"images/kivame/demo.jpeg",
+			"images/clique.jpg"
+		]
+	},
+	{
 		"title": "8/4/14: Website Revamp!",
 		"color": "#88f",
 		"paragraphs": [
