@@ -44,11 +44,20 @@ paper-tabs {
 	background: #cc4444;
 	color: #eeeeee;
 }
-core-item {
-	margin: 0px;
-	padding: 0px;
+.sidebar-menu {
+	list-style-type: none;
+	list-style-position: inside;
+	margin: 0;
+	padding: 0;
 }
-core-menu > a {
+.sidebar-menu > li {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 0px;
+	list-style-position: inside;
+	text-align: center;
+}
+.sidebar-menu > li > a {
 	text-decoration: none;
 	color: inherit;
 }

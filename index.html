@@ -44,9 +44,9 @@
 	<div content ng-if="page">
 		<core-drawer-panel>
 		<div drawer>
-			<core-menu>
-			<a ng-repeat="card in page.cards" href="#{{card.title}}"><core-item label={{card.title}}></core-item></a>
-			</core-menu>
+			<ul class="sidebar-menu">
+				<li ng-repeat="card in page.cards"><a href="#{{card.title}}">{{card.title}}</a></li>
+			</ul>
 			<paper-shadow z="5"></paper-shadow>
 		</div>
 		<div main>
