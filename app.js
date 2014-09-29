@@ -9,41 +9,33 @@ app.filter('unsafe', function($sce) {
 
 app.controller('ctrl', ['$scope', '$http', function($scope, $http) {
 
-	$scope.getPage = function(page) {
+	var pageUrls = ['content/blog.json', 'content/about.json', 'content/projects.json', 'content/resume.json'];
+	var pages = [];
+
+	var getPage = function() {
+			};
+
+	for (var i in pageUrls) {
 		$http({
 			method: 'get',
-			url: page
+			url: pageUrls[i]
 		}).success(function(response) {
-			$scope.page = response;
+			pages.push(response);
 			if (!$scope.$$phase) {
 				$scope.$apply();
 			}
 		});
-	};
+	}
 
 	$scope.pageUrl = 'content/blog.json';
-	$scope.getPage($scope.pageUrl);
+	$scope.page = pages[0];
 
 	var tabs = document.querySelector('paper-tabs');
 
 	tabs.addEventListener('core-select', function() {
-		var oldPageUrl = $scope.pageUrl;
-		switch(tabs.selected) {
-			case 0:
-				$scope.pageUrl = 'content/blog.json';
-			break;
-			case 1:
-				$scope.pageUrl = 'content/about.json';
-			break;
-			case 2:
-				$scope.pageUrl = 'content/projects.json';
-			break;
-			case 3:
-				$scope.pageUrl = 'content/resume.json'
-			break;
-		}
-		if ($scope.pageUrl != oldPageUrl) {
-			$scope.getPage($scope.pageUrl);
+		$scope.page = pages[tabs.selected];
+		if (!$scope.$$phase) {
+			$scope.$apply();
 		}
 	});
 }]);
