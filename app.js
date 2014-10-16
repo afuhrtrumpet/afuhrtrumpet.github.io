@@ -39,4 +39,3 @@ app.controller('ctrl', ['$scope', '$http', function($scope, $http) {
 		}
 	});
 }]);
-
