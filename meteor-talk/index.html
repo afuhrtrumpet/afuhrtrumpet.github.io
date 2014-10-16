@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Meteor</title>
+<link rel="stylesheet" href="bower_components/reveal-js/css/theme/night.css" id="theme">
+<link rel="stylesheet" href="bower_components/reveal-js/css/reveal.min.css" id="theme">
+<style>
+body {
+	background: url('background3.jpeg') no-repeat fixed center;
+	background-size: cover;
+}
+code {
+	background-color: rgba(100,100,100,.7);
+}
+</style>
+</head>
+
+<body>
+<div class="reveal">
+	<div class="slides">
+		<section>
+			<h2>Meteor</h2>
+			<p>A talk by Alex Fuhr</p>
+		</section>
+
+		<section>
+			<section>
+				<h2>What is Meteor?</h2>
+				<ul>
+					<li>A full-stack Javascript web framework</li>
+						<ul>
+							<li>Blaze Templating Engine (similar to Handlebars)</li>
+							<li>MongoDB</li>
+							<li>Node.js Backend</li>
+							<li>Command-line Tools</li>
+							<li>Packaging System</li>
+							<li>Deploying Server (apps can be published at [appname].meteor.com)</li>
+						</ul>
+						<li>NOT REST-based like Express</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Installation</h2>
+				<code>curl https://install.meteor.com/ | sh</code>
+				<ul>
+					<li>No official Windows support. For unoffical Windows support, there is win.meteor.com</li>
+					<li>You can also try Meteor in a browser at meteorpad.com</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Command-Line Tools</h2>
+				<ul>
+					<li>To create a new project: <code>meteor create [project name]</code></li>
+					<li>To run your application: <code>meteor</code></li>
+					<li>To go to the Mongo command line: <code>meteor mongo</code></li>
+					<li>To deploy to meteor.com: <code>meteor deploy [site name]</code></li>
+				</ul>
+			</section>
+		</section>
+		<section>
+			<h2>Meteor File Structure</h2>
+			<ul>
+				<li>By default, Meteor has no file structure</li>
+				<ul>
+					<li>All Javascripts in the top directory are run on both server and client</li>
+					<li>All HTML and CSS files are run on the client</li>
+				</ul>
+				<li>The <code>Meteor.isServer</code> and <code>Meteor.isClient</code> methods can be useful in this case.</li>
+				<li>For more complex apps, this can get annoying.</li>
+				<li>All code in the <code>client</code> directory is only run on the client, and all code in the <code>server</code> directory is only run on the server.</li>
+				<li>Other resources (like images) can go in the <code>public</code> directory where they can be accessed in HTML, CSS, and JS files.</li>
+				<li>Smart packages go into the <code>package</code> directory (we'll get to this later)</li>
+			</ul>
+		</section>
+		<section>
+			<section>
+				<h2>Meteor on the Client Side - Blaze</h2>
+				<ul>
+					<li>As mentioned before, Blaze uses spacebars, which are very similar to handlebars</li>
+					<li>Standard tags such as <code>{{#if [expression]}}</code>, <code>{{else}}</code>, <code>{{#each [array]}}</code> are all available</li>
+					<li>These tags "react" to changes in a collection and other factors automatically</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Meteor on the Client Side - Templates</h2>
+				<ul>
+					<li>A template is defined by the tag <code>&lt;template name="[name]"&gt;</pre></code></li>
+					<li>You can then use it in your HTML as <code>{{> [template name]}}</code></li>
+					<li>Templates can be nested within templates, giving your HTML a hierarchical structure.</li>
+					<li>Variables used within templates are defined within your code.</li>
+					<ul>
+						<li><code>Template.[template name].helpers</code> lets you define functions for each of the variables in your template.</li>
+						<li><code>Template.[template name].[variable name]</code> can also be used for just a single variable.</li>
+					</ul>
+					<li>Events for templates (for example, a button click) are also defined in Javascript as <code>Template.[template name].events</code></li>
+				</ul>
+			</section>
+			<section>
+				<h2>Meteor on the Client Side - Packages</h2>
+				<ul>
+					<li>Many popular client side libraries are available already as packages.</li>
+					<li>When you add a packages, the packages CSS and JS are automatically included in your project.</li>
+					<li>To add Bootstrap: <code>meteor add bootstrap</code></li>
+					<li>To search for a package: <code>meteor search [name]</code></li>
+					<li>You can also search Meteor packages at atmospherejs.com</li>
+				</ul>
+			</section>
+		</section>
+		<section>
+			<section>
+				<h2>Collections</h2>
+				<ul>
+					<li>Meteor collections are stored on both the client (Minimongo) and server (Mongo) by default.</li>
+					<li>To declare a new collection (typically done on both client and server): <code>People = new Mongo.Collection("people");</code></li>
+					<li>Remember that this is NoSQL, so there is no such thing as a schema.</li>
+					<li>Standard methods such as insert, find, delete, update, upsert exist for these collections.</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Users</h2>
+				<ul>
+					<li>Every Meteor application has a Users collection and API built in.</li>
+					<li>The client can use <code>Meteor.user()</code> or <code>Meteor.userId()</code> to get information about the user currently signed in, or <code>Meteor.users</code> to get information about all users.</li>
+					<li>The <code>accounts-ui</code> package makes the user login process super easy.</li>
+					<ul>
+						<li>First add <code>accounts-ui</code>, then one or more of <code>accounts-base</code>, <code>accounts-google</code>, <code>accounts-facebook</code>, <code>accounts-github</code>, etc.</li>
+						<li>This adds the <code>loginButtons</code> template to your HTML.</li>
+						<li>When you click on the login buttons for the first time, you can configure 3rd party logins.</li>
+					</ul>
+				</ul>
+			</section>
+		</section>
+		<section>
+			<section>
+				<h2>Meteor on the Server</h2>
+				<ul>
+					<li>Meteor applications typically don't use very much server logic.</li>
+					<li>Server side logic is necessary for several things:</li>
+					<ul>
+						<li>Access control of collections via publish</li>
+						<li>Integration with npm packages</li>
+						<li>Initial or periodic actions</li>
+					</ul>
+				</ul>
+			</section>
+			<section>
+				<h2>Integrating NPM Packages</h2>
+				<ul>
+					<li>Meteor allows use of npm packages by creating what's known as a "smart package".</li>
+					<li>To start, create a packages directory and then a directory for your smart package inside this.</li>
+					<li>Create a package.js file.</li>
+					<li>The package.js should contain a description of the package with <code>Package.describe</code>, an <code>Npm.depends</code>, and <code>Package.on_use</code> that adds other JS files to the package and exports variables.</li>
+					<li>Then do <code>meteor add [package name]</code> and the exported variables should be available server-side.</li>
+				</ul>
+			</section>
+		</section>
+		<section>
+			<section>
+				<h2>Making Apps More Secure</h2>
+				<ul>
+					<li>Obviously, full client access to collections is bad for security.</li>
+					<li>Meteor comes with two packages by default, autopublish and insecure, that make for easier development but should not be used in production.</li>
+					<li>Autopublish mirrors the server-side database to the client, and insecure allows the client to modify anything in the database.</li>
+					<li>To make an app ready for production, simply remove these two packages.</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Publish and Subscribe: The Secure Way of Managing Data</h2>
+				<ul>
+					<li><code>Meteor.Publish</code> is used to make a certain subset of data available to the client (for example, only the currently logged in user's messages).</li>
+					<li><code>Meteor.Subscribe</code> must be used on the client to have access to these data subsets.</li>
+					<li>For modifying database info, you can then use <code>Meteor.methods</code> on the server.</li>
+				</ul>
+			</section>
+		</section>
+		<section>
+			<h2>Adding Reactivity</h2>
+			<ul>
+				<li>Meteor template functions automatically update when any collection is changed, but what if you want a non-collection element to be reactive?</li>
+				<li>The Meteor Deps package allows for creating your own reactive data sources.</li>
+				<li>To create a source, create an object with <code>Deps.Dependency</code>, and call the <code>depend()</code> function for get methods and <code>changed()</code> function for set methods.</li>
+				<li><code>Deps.autorun</code> provides a function that executes whenever a dependency is changed.</li>
+			</ul>
+		</section>
+		<section>
+			<h2>Routing</h2>
+			<ul>
+				<li>Meteor by default isn't for single-page apps, thus it doesn't have any kind of routing built in.</li>
+				<li>The <code>iron-router</code> package makes routing possible.</li>
+				<li>Using <code>Router.route</code>, you can choose which templates to display with each route.</li>
+			</ul>
+		</section>
+		<section>
+			<section>
+			<h2>Advantages of Using Meteor</h2>
+				<ul>
+					<li>Apps generally take very little time to create compared to other frameworks and with less files.</li>
+					<li>With collection mirroring and built-in accounts, development is simple.</li>
+					<li>Hot code push - you don't even have to refresh the page to see an update.</li>
+					<li>Free deployment environment at meteor.com.</li>
+					<li>PhoneGap support - Great for creating mobile apps.</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Disadvantages of Using Meteor</h2>
+				<ul>
+					<li>Still under heavy development</li>
+					<ul>
+						<li>Until the 1.0 release, each update brings drastic changes.</li>
+						<li>Recent updates have temporarily broken some packages.</li>
+					</ul>
+					<li>Can put a lot of strain on the client.</li>
+					<li>Only supports Mongo at the moment.</li>
+					<li>A little effort has to be taken with each app to make it secure for production.</li>
+				</ul>
+			</section>
+		</section>
+		<section>
+			<section>
+				<h2>Meteor Hackathon</h2>
+				<iframe class="vine-embed" src="https://vine.co/v/M0pTMahepvj/embed/simple" width="600" height="600" frameborder="0"></iframe><script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>
+			</section>
+			<section>
+				<h2>Meteor Hackathon</h2>
+				<img src="presentation4.jpg">
+			</section>
+			<section>
+				<h2>Meteor Hackathon</h2>
+				<img src="presentation1.jpg">
+			</section>
+			<section>
+				<h2>Meteor Hackathon</h2>
+				<img src="presentation2.jpg">
+			</section>
+			<section>
+				<h2>Meteor Hackathon</h2>
+				<img src="presentation3.png">
+			</section>
+			<section>
+				<h2>Meteor Hackathon</h2>
+				<img src="presentation5.jpg">
+			</section>
+		</section>
+		<section>
+			<h2>Additional Resources</h2>
+			<ul>
+				<li>https://www.discovermeteor.com/blog - Articles about Meteor concepts</li>
+				<li>http://crater.io - Meteor news</li>
+				<li>Meteor Devshop SF - Once a month, all talks are live-streamed and posted online afterwards</lI>
+			</ul>
+		</section>
+	</div>
+</div>
+<script src="bower_components/reveal-js/js/reveal.min.js"></script>
+<script type="text/javascript">
+Reveal.initialize({
+// Display controls in the bottom right corner
+controls: true,
+// Display a presentation progress bar
+progress: true,
+// Push each slide change to the browser history
+history: false,
+// Enable keyboard shortcuts for navigation
+keyboard: true,
+// Enable the slide overview mode
+overview: true,
+// Vertical centering of slides
+center: true,
+// Loop the presentation
+loop: false,
+// Change the presentation direction to be RTL
+rtl: false,
+// Number of milliseconds between automatically proceeding to the 
+// next slide, disabled when set to 0, this value can be overwritten
+// by using a data-autoslide attribute on your slides
+autoSlide: 0,
+// Enable slide navigation via mouse wheel
+mouseWheel: false,
+// Apply a 3D roll to links on hover
+rollingLinks: true,
+// Transition style
+transition: 'linear' // default/cube/page/concave/zoom/linear/fade/none
+});
+</script>
+</body>
+</html>
