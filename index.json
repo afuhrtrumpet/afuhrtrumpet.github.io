@@ -4,6 +4,16 @@
 		"name": "Blog",
 		"cards": [
 			{
+			"title": "12/23/14: End of Semester Updates",
+			"color": "#88f",
+			"paragraphs": [
+				"Just finished a semester at OSU, and with that I will begin further updating my website with some of the projects and experiences I have had during that time.",
+				"First of all, I recently updated the website to be more SEO-friendly (and readable in terminal browsers!) through the use of <a href='https://github.com/techtribe/grunt-static-handlebars'>grunt-static-handlebars</a>. With this, I no longer need Angular to process my data, as it is compiled into a static HTML file from a Handlebars template. I will also be reworking the layout a bit to be a bit more mobile-friendly, among other things.",
+				"This semester has been filled with incredibly valuable learning experiences and opportunities. Most importantly:<ul><li>Built a robot to manipulate a zen garden at the OSU hackathon. This project led to a much deeper research project I am involved in, where my same group is taking the design further to create a modular prototyping machine that will have 3D printing and laser cutting functions, among others. You can track the development of this machine at our <a href='https://github.com/projectzen/3-Axis-Prototyping-Machine'>Github</a> and <a href='https://projectzen.xyz/'>website</a>.</li><li>Began learning about and working with FPGAs. I first worked with FPGAs through my intro ECE lab, where we built an audio keyboard on an Altera DE2. From this, I began learning Verilog using a DE0 board, first implementing Pong with VGA signals. Currently, I am reconstructing the Rhythm Heaven minigame <a href='https://www.youtube.com/watch?v=YrCTHodtzb4'>Lockstep</a> entirely with hardware.</li><li>Continued work with the medical center to create a lightweight image viewer. For this, I am using Python 2, GTK, and Cairo. Currently, the basic image display and zoom functionality is working, and I am working on using Cairo to draw masks.</li><li>Began an internship with <a href='http://allrfriends.com/'>all R friends</a>, where I am working on adding and improving functions to their backend system. Currently, I have built an automated text message system for the caretakers to use.</li></ul>",
+				"I also have some exciting future plans coming up. Next semester, I start work as a research assistant at the OSU ElectroScience Laboratory, and this summer, I will be working as a software engineering intern at Google as part of the AdMob team!"
+			]
+		},
+			{
 			"title": "8/6/14: More Updates + End of Summer",
 			"color": "#88f",
 			"paragraphs": [

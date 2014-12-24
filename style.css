@@ -79,9 +79,8 @@ info-card {
 #menuToggle {
 	display: block;
 }
-@media (min-width: 1000px) {
+@media screen and (min-width: 1000px) {
 	info-card {
-		width: 48%;
 		width: calc(50% - 25px);
 	}
 	#menuToggle {

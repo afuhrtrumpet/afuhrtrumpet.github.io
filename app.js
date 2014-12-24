@@ -5,6 +5,12 @@ $(document).ready(function() {
 	tabs.addEventListener('core-select', function() {
 		pages.selected = tabs.selected;
 	});
+	var $container = $('.tiles');
+	$container.imagesLoaded(function() {
+		$container.masonry({
+			itemSelector: '.card'
+		});
+	});
 });
 
 
