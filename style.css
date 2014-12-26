@@ -106,3 +106,20 @@ simple-slider {
 simple-slider img {
 	height: 500px;
 }
+paper-button {
+	background: #f44;
+	color: white;
+	padding:0;
+}
+paper-button::shadow .button-content {
+	padding:0;
+}
+paper-button input{
+	padding:1em;
+	background-color: transparent;
+	border-color: transparent;
+	color: white;
+}
+paper-button input::-moz-focus-inner {
+	border: 0;
+}

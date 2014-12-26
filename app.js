@@ -6,10 +6,12 @@ $(document).ready(function() {
 		pages.selected = tabs.selected;
 	});
 	var $container = $('.tiles');
-	$container.imagesLoaded(function() {
-		$container.masonry({
-			itemSelector: '.card'
-		});
+
+	var form = document.querySelector('#contactform');
+
+	form.addEventListener('submitted', function() {
+		document.querySelector('#toast').show();
+		$('#contactform')[0].reset();
 	});
 });
 
