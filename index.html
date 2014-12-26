@@ -116,6 +116,38 @@
 			<section>
 				<div class="tiles">
 						<div class="card" slide-from-right>
+							<info-card id="Leap Motion Conducting Simulator">
+							<h2>Leap Motion Conducting Simulator</h2>
+								<p>This project was created at TownHack 2014 in Columbus, Ohio. The code can be found <a href='https://github.com/projectzen/leap-motion-composer'>here</a>.</p>
+								<p>With this project our goal was to control the playback of music using conducting motions. We ran into many problems in figuring out how exactly to control music, but ended up with a working solutions that used VLC's HTTP API. Other ideas discussed were using MIDI signals to control Mixxx or to interface with Pure Data, but we ran into issues with Mixxx's documentation and getting sound stretching (altered speed without pitch change) working on Pure Data would have taken too much time. One problem in particular was CORS protection on VLC's API: our Ajax calls were being denied. To circumvent this we used a PHP script that served as the authentication mechanism for VLC.</p>
+								<p>The finished project utilized two different controls: the speed of the hand's motion to change the tempo of the music, and the height of the hand's motion to control the volume of the music. This change triggered every 4 beats in order to keep the music up to date but not call the API too much or misinterpret a single control.</p>
+								<p>Future goals for this project revolve around making in an entirely client-side application. This includes authenticating with VLC without the use of PHP, using beat-detection software to avoid manual tempo input, and better following of conducting controls (for example, holding a note if the user's hand stops moving).</p>
+							<image-slider>
+							</image-slider>
+							</info-card>
+						</div>
+						<div class="card" slide-from-right>
+							<info-card id="Autoscribe">
+							<h2>Autoscribe</h2>
+								<p>The goal of this project is to automatically create sheet music from the notes heard by a user. The project is still not completely accurate and user-friendly, but a working model exists using Pure Data and the Python library Abjad.</p>
+								<p>The Pure Data patch takes several inputs from the user: the number of beat subdivisions to record, the tempo, and the number of measurements per beat subdivision. The user then hits the start button, and can see the beat represented through a blinking dot. After pressing stop, the data is written to a text file that can then be interpreted by a Python script. This script constructs the sheet music and displays it to the user in PDF form.</p>
+							<image-slider>
+								<img src="images/autoscribe/puredata.png"/>
+								<img src="images/autoscribe/pdfresult.png"/>
+							</image-slider>
+							</info-card>
+						</div>
+						<div class="card" slide-from-right>
+							<info-card id="Project Zen: A Robotic Gesture-Controlled Zen Garden">
+							<h2>Project Zen: A Robotic Gesture-Controlled Zen Garden</h2>
+								<p>This project was created at OHI/O 2014. The code can be found <a href='https://github.com/OHIOHackathon2014/project_zen'>here</a>.</p>
+								<p>Mechanically, this utilized spare printer parts to do both the X and Y-axis motion, mounted by a wooden frame. These motors were driven by an H-bridge and controlled using an Arduino Uno. On the software side, the Arduino ran a sketch that used a one-byte control system to determine how to drive each motor, which was sent using the node-serialport library via a Meteor application. This Meteor app received signals from a Leap Motion on the front end using the LeapJS library and then used a two-point calculation to generate velocity signals for the Arduino. Following the hackathon, we learned from our experiences here and have begun work on a 3-axis CNC, supervised and funded by Dr. Arnab Nandi. A brief summary of the current project is available <a href='https://github.com/projectzen/3D-Printer'>here</a>.</p>
+							<image-slider>
+								<img src="images/projectzen/final.jpg"/>
+							</image-slider>
+							</info-card>
+						</div>
+						<div class="card" slide-from-right>
 							<info-card id="Meteor Flies Drone">
 							<h2>Meteor Flies Drone</h2>
 								<p>This project was created at the 2014 Meteor Summer Hackathon. It won in the category Most Entertaining. The code for this can be found <a href='https://github.com/afuhrtrumpet/meteorhack14'>here</a>.</p>
