@@ -39,6 +39,7 @@
 		<template repeat="{{slide in slides}}">
 			<section>
 			<div slide-from-right>
+				<paper-shadow z="4">
 				<slideshow-slide>
 					<h2>{{slide.title}}</h2>
 					<h3>{{slide.subtitle}}</h3>
@@ -46,6 +47,7 @@
 						{{slide.text}}
 					</div>
 				</slideshow-slide>
+				</paper-shadow>
 			</div>
 			</section>
 		</template>
