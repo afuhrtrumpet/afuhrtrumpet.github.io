@@ -1,0 +1,29 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/core-ajax/core-ajax.html">
+<polymer-element name="slide-service" attributes="slides">
+  <template>
+    <style>
+    :host {
+      display: none;
+    }
+    </style>
+    <core-ajax id="ajax"
+      auto
+      url="slides.json"
+      on-core-response="{{slidesLoaded}}"
+      handleAs="json">
+    </core-ajax>
+  </template>
+  <script>
+  Polymer('slide-service', {
+    created: function() {
+      this.slides = [];
+    },
+    slidesLoaded: function() {
+      // Make a copy of the loaded data
+			console.log("Slides loaded.");
+      this.slides = this.$.ajax.response.slice(0);
+		}
+	});
+  </script>
+</polymer-element>

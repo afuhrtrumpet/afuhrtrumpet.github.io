@@ -1,0 +1,75 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/paper-shadow/paper-shadow.html">
+<link rel="import" href="bower_components/paper-fab/paper-fab.html">
+<link rel="import" href="bower_components/core-animated-pages/core-animated-pages.html">
+<link rel="import" href="bower_components/core-animated-pages/transitions/slide-from-right.html">
+<link rel="import" href="slideshow-slide.html">
+<link rel="import" href="slide-service.html">
+
+<polymer-element name="slideshow-list" attributes="show">
+	<template>
+		<style>
+			:host {
+				display: block;
+				width: 100%;
+			}
+			#back {
+				position: fixed;
+				bottom: 10px;
+				right: 70px;
+			}
+			#forward {
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+			}
+			slideshow-slide {
+				height: 100%;
+			}
+			core-animated-pages {
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+
+		<slide-service id="service" slides="{{slides}}">
+		</slide-service>
+
+		<core-animated-pages transitions="slide-from-right" selected="{{selected}}">
+		<template repeat="{{slide in slides}}">
+			<section>
+			<div slide-from-right>
+				<slideshow-slide>
+					<h2>{{slide.title}}</h2>
+					<h3>{{slide.subtitle}}</h3>
+					<div>
+						{{slide.text}}
+					</div>
+				</slideshow-slide>
+			</div>
+			</section>
+		</template>
+		</core-animated-pages>
+
+		<paper-fab icon="arrow-back" id="back" on-click={{back}}></paper-fab>
+		<paper-fab icon="arrow-forward" id="forward" on-click={{forward}}></paper-fab>
+
+	</template>
+
+	<script>
+		Polymer('slideshow-list', {
+			publish: { 
+			},
+			created: function() {
+				this.selected = 0;
+				console.log("Selected set");
+			},
+			forward: function(event, detail, sender) {
+				this.selected++;
+			},
+			back: function(event, detail, sender) {
+				this.selected--;
+			}
+		});
+	</script>
+</polymer-element>
