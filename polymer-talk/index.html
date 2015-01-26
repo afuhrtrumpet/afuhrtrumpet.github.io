@@ -52,6 +52,7 @@ core-animated-pages {
 	position: fixed;
 	top: 5px;
 	right: 10px;
+	background: #259b24;
 }
 </style>
 
@@ -90,7 +91,9 @@ core-animated-pages {
 
 <script>
 var pages = document.querySelector("#mainPages");
+var fab = document.querySelector("#fullscreen-button");
 var switchPages = function() {
 	pages.selected = pages.selected == 0 ? 1 : 0;
+	fab.icon = pages.selected == 1 ? "unfold-less" : "unfold-more";
 }
 </script>
