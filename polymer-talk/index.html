@@ -56,6 +56,8 @@ core-animated-pages {
 	position: fixed;
 	top: 5px;
 	right: 10px;
+	background: #FFEB3B;
+	color: black;
 }
 </style>
 
@@ -99,4 +101,6 @@ var switchPages = function() {
 	pages.selected = pages.selected == 0 ? 1 : 0;
 	fab.icon = pages.selected == 1 ? "unfold-less" : "unfold-more";
 }
+var listener = new window.keypress.Listener();
+listener.simple_combo("f", switchPages);
 </script>

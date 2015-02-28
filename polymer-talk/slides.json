@@ -1,12 +1,132 @@
 [
 	{
-		"title":"Polymer",
-		"subtitle":"Front-End Web Design The Modular Way",
-		"text":"Yay text"
+		"title":"Polymer Introduction",
+		"subtitle":"What is Polymer?",
+		"items": [
+			"A front-end web components framework",
+			"Open-source, managed by Google",
+			"Mainly for material design - but doesn't have to be",
+			"Fun fact: This slideshow is made in Polymer."
+		]
 	},
 	{
-		"title":"Second slide",
-		"subtitle":"Everything is working!",
-		"text":"Even more yay"
+		"title":"Polymer Introduction",
+		"subtitle":"Web Components",
+		"items": [
+			"Web components are bits of HTML, styling, and scripts packaged into a single HTML tag.",
+			"They are currently being worked into the W3C as a standard.",
+			"Example: <a target='_blank' href='https://css-tricks.com/modular-future-web-components/'>link</a>",
+			"One such implementation of this standard is <a target='_blank' href='https://css-tricks.com/modular-future-web-components/'>webcomponentsjs</a>",
+			"Polymer provides an library for building components compatible with this implementation.",
+			"Others include <a target='_blank' href='http://www.x-tags.org/'>X-Tag</a> from Mozilla, and <a target='_blank' href='https://bosonic.github.io/'>Bosonic.</a>"
+		]
+	},
+	{
+		"title":"Using Polymer Elements",
+		"subtitle":"Polymer Installation",
+		"items": [
+			"To use Polymer in your web project, you need a couple of things.",
+			"To get the main Polymer libraries: <code>bower install --save Polymer/polymer</code>",
+			"All you need to import to use a Polymer element is webcomponents.js"
+		]
+	},
+	{
+		"title":"Using Polymer Elements",
+		"subtitle":"Using an element.",
+		"items": [
+			"To use an element defined outside your HTML, you need to import it.",
+			"For example: <code>&lt;link rel='import' href='bower_components/paper-fab/paper-fab.html'&gt;</code>",
+			"Expect to have a lot of these for projects with lots of Polymer elements.",
+			"Then, to use the element, you simply use its tag: <code>&lt;paper-fab&gt;&lt;/paper-fab&gt;</code>.",
+			"Each element has its own specification on how to be used: refer to the docs for that element for details.",
+			"Usually for visible elements, you have to set the height in CSS to see the element (usually 100%)"
+		]
+	},
+	{
+		"title":"Using Polymer Elements",
+		"subtitle":"Core-Elements",
+		"items": [
+			"By design, Polymer comes with no elements installed. To install the core elements, <code>bower install Polymer/core-elements</code>",
+			"The core elements of Polymer provide some basic elements you might want in web design, such as icons, accordions, and dropdown. <a target='_blank' href='https://www.polymer-project.org/components/core-elements/demo.html'>Core Elements Sampler</a>",
+			"Some notable ones include: core-scaffold, core-icon, core-pages"
+		]
+	},
+	{
+		"title":"Using Polymer Elements",
+		"subtitle":"Transitions",
+		"items": [
+			"The core-transition library in Polymer allows you to do several complex CSS animations - with just HTML!",
+			"Pair this with core-animated-pages, and you have easy page transitions within a single page app.",
+			"Polymer includes many transitions by default in the core-animated-pages package."
+		]
+	},
+	{
+		"title":"Using Polymer Elements",
+		"subtitle":"Paper Elements",
+		"items": [
+			"In addition to the core elements, Polymer provides a set of paper-elements: <code>bower install Polymer/paper-elements</code>",
+			"All of the paper elements are built with material design principles in mind: <a target='_blank' href='https://www.polymer-project.org/components/paper-elements/demo.html",
+			"Notable elements here: paper tabs, floating action buttons, paper toast",
+			"If you like the material design elements but want to use them with Angular, there's also <a target='_blank' href='https://material.angularjs.org/#/'>Angular Material</a>"
+		]
+	},
+	{
+		"title":"Creating Polymer Elements",
+		"subtitle":"Basics of Polymer Elements",
+		"items": [
+			"In addition to using the core and paper elements, you can make your own web components using Polymer.",
+			"To start, import polymer.html into your file, as well as any other components that you need.",
+			"You define an element with the &lt;polymer-element&gt; tag.",
+			"Inside this goes the &lt;template&gt; tag, where you define the style and structure of your Polymer element.",
+			"Within the template, you can define insertion points using the content tag, for example to define an insertion point for and image: &lt;content select='img'&gt;&lt;/content&gt;",
+			"To style these elements, you need to use a special CSS rule: <code>polyfill-next-selector { content: 'img'; }</code>",
+			"At the end, there should be a script tag that calls the function <code>Polymer({});</code>. To this function, you can add options as well as functions called in the component."
+		]
+	},
+	{
+		"title":"Creating Polymer Elements",
+		"subtitle":"Data Binding",
+		"items": [
+			"Polymer elements also have their own sets of data that you can access and use as HTML.",
+			"The {{}} notation used in Angular is used for this.",
+			"You can also use this notation for functions: for example, to call a function when part of the element is clicked.",
+			"These functions are defined in the <code>Polymer({})</code> call mentioned before.",
+			"You can also define a publish object within the Polymer function that sets the public attributes of the element and their defaults."
+		]
+	},
+	{
+		"title":"One More Thing",
+		"subtitle":"Shadow DOM",
+		"items": [
+			"Polymer elements live in their own world - their functions and styling are not shared or influenced by the DOM they are used in.",
+			"This type of encapsulation is known as Shadow DOM.",
+			"Similarly, content inserted into a Polymer component cannot be styled by the Polymer component itself normally - this is why we use polyfill-next-selector.",
+			"You can also style elements inside a component with some special CSS tricks: ::shadow (for immediate shadow tree styling), and /deep/ (for piercing all shadow trees)"
+		]
+	},
+	{
+		"title":"Conclusion",
+		"subtitle":"Summary of Polymer",
+		"items": [
+			"Web components are going to be everpresent within front-end web development in the future.",
+			"Polymer, while still in beta and thus liable to change, is a fully-featured solution to creating these components.",
+			"You don't have to make components to use Polymer - the included ones, spanning from animations to scaffolding are very useful, especially for material design.",
+			"Since Polymer is just for web components, you can use it with just about every other framework: Angular, Meteor, Rails, etc",
+			"Polymer even has a visual designer <a target='_blank' href='https://polymer-designer.appspot.com/'>here</a>.",
+			"Want to work on a project that will help others? Try making web components!",
+			"If you want to see a fully-featured project that demonstrates what Polymer is capable of, there's <a target='_blank' href='https://polymer-topeka.appspot.com/'>Topeka</a>"
+		]
+	},
+	{
+		"title":"Conclusion",
+		"subtitle":"More Resources",
+		"items": [
+			"<a target='_blank' href='https://www.polymer-project.org/'>Official Polymer website</a> - Has a good tutorial, and explains usage for all the included elements.",
+			"<a target='_blank' href='http://builtwithpolymer.org/'>Collection of apps built with Polymer</a>",
+			"<a target='_blank' href='http://customelements.io/'>Gallery of custom web components</a>",
+			"<a target='_blank' href='https://www.youtube.com/watch?v=DsATeVvMIm4'>Meteor Devshop - Using Polymer with Meteor</a>",
+			"<a target='_blank' href='http://www.google.com/design/spec/style/color.html'>Material Design Color Palette</a>",
+			"<a target='_blank', href='https://github.com/afuhrtrumpet/afuhrtrumpet.github.io/tree/master/polymer-talk'>Source for this talk</a>"
+		]
 	}
 ]

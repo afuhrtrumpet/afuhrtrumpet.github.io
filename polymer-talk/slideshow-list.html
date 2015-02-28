@@ -5,6 +5,9 @@
 <link rel="import" href="bower_components/core-animated-pages/transitions/slide-from-right.html">
 <link rel="import" href="slideshow-slide.html">
 <link rel="import" href="slide-service.html">
+<link rel="import" href="juicy-html.html">
+
+<script src="http://cdn.rawgit.com/dmauro/Keypress/master/keypress.js"></script>
 
 <polymer-element name="slideshow-list" attributes="show">
 	<template>
@@ -14,7 +17,8 @@
 				width: 100%;
 			}
 			paper-fab {
-				/* background: #558B2F;*/
+				background: #FFC107;
+				color: black;
 			}
 			#back {
 				position: fixed;
@@ -46,9 +50,11 @@
 				<slideshow-slide>
 					<h2>{{slide.title}}</h2>
 					<h3>{{slide.subtitle}}</h3>
-					<div>
-						{{slide.text}}
-					</div>
+					<ul>
+						<template repeat="{{item in slide.items}}">
+						<li><template is="juicy-html" content="{{item}}"></template></li>
+						</template>
+					</ul>
 				</slideshow-slide>
 				</paper-shadow>
 			</div>
@@ -62,12 +68,21 @@
 	</template>
 
 	<script>
+		var listener = new window.keypress.Listener();
 		Polymer('slideshow-list', {
 			publish: { 
 			},
 			created: function() {
 				this.selected = 0;
-				console.log("Selected set");
+				var that = this;
+				listener.simple_combo("left", function() {
+					console.log("Left pressed.");
+					that.selected--;
+				});
+				listener.simple_combo("right", function() {
+					console.log("Right pressed.");
+					that.selected++;
+				});
 			},
 			forward: function(event, detail, sender) {
 				this.selected++;
