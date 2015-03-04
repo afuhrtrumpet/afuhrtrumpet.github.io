@@ -101,7 +101,8 @@
 			"Polymer elements live in their own world - their functions and styling are not shared or influenced by the DOM they are used in.",
 			"This type of encapsulation is known as Shadow DOM.",
 			"Similarly, content inserted into a Polymer component cannot be styled by the Polymer component itself normally - this is why we use polyfill-next-selector.",
-			"You can also style elements inside a component with some special CSS tricks: ::shadow (for immediate shadow tree styling), and /deep/ (for piercing all shadow trees)"
+			"You can also style elements inside a component with some special CSS tricks: ::shadow (for immediate shadow tree styling), and /deep/ (for piercing all shadow trees)",
+			"<a target='_blank' href='https://www.polymer-project.org/articles/styling-elements.html'>Styling guide</a>"
 		]
 	},
 	{
