@@ -76,19 +76,19 @@
 				this.selected = 0;
 				var that = this;
 				listener.simple_combo("left", function() {
-					console.log("Left pressed.");
-					that.selected--;
+					that.back();
 				});
 				listener.simple_combo("right", function() {
-					console.log("Right pressed.");
-					that.selected++;
+					that.forward();
 				});
 			},
 			forward: function(event, detail, sender) {
-				this.selected++;
+				if (this.selected < this.slides.length - 1)
+					this.selected++;
 			},
 			back: function(event, detail, sender) {
-				this.selected--;
+				if (this.selected > 0) 
+					this.selected--;
 			}
 		});
 	</script>

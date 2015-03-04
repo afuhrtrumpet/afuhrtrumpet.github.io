@@ -32,7 +32,7 @@
 	},
 	{
 		"title":"Using Polymer Elements",
-		"subtitle":"Using an element.",
+		"subtitle":"Using an Element",
 		"items": [
 			"To use an element defined outside your HTML, you need to import it.",
 			"For example: <code>&lt;link rel='import' href='bower_components/paper-fab/paper-fab.html'&gt;</code>",
