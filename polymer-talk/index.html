@@ -71,9 +71,12 @@ core-animated-pages {
     <core-toolbar id="navheader">
       <span>Slides</span>
     </core-toolbar>
-    <core-menu>
-      <core-item label="One"></core-item>
-      <core-item label="Two"></core-item>
+		<core-menu>
+      <core-item label="Polymer Introduction" data-slide="0"></core-item>
+      <core-item label="Using Polymer Elements" data-slide="2"></core-item>
+      <core-item label="Creating Polymer Elements" data-slide="7"></core-item>
+      <core-item label="Shadow DOM" data-slide="9"></core-item>
+      <core-item label="Conclusion" data-slide="10"></core-item>
     </core-menu>
   </core-header-panel>
   
@@ -101,6 +104,9 @@ var switchPages = function() {
 	pages.selected = pages.selected == 0 ? 1 : 0;
 	fab.icon = pages.selected == 1 ? "unfold-less" : "unfold-more";
 }
+var selectionChanged = function(e, detail) {
+	console.log(JSON.stringify(detail.item));
+};
 var listener = new window.keypress.Listener();
 listener.simple_combo("f", switchPages);
 </script>
