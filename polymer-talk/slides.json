@@ -16,7 +16,7 @@
 			"Web components are bits of HTML, styling, and scripts packaged into a single HTML tag.",
 			"They are currently being worked into the W3C as a standard.",
 			"Example: <a target='_blank' href='https://css-tricks.com/modular-future-web-components/'>link</a>",
-			"One such implementation of this standard is <a target='_blank' href='https://css-tricks.com/modular-future-web-components/'>webcomponentsjs</a>",
+			"One such implementation of this standard is <a target='_blank' href='http://webcomponents.org/'>webcomponentsjs</a>",
 			"Polymer provides an library for building components compatible with this implementation.",
 			"Others include <a target='_blank' href='http://www.x-tags.org/'>X-Tag</a> from Mozilla, and <a target='_blank' href='https://bosonic.github.io/'>Bosonic.</a>"
 		]
@@ -26,7 +26,7 @@
 		"subtitle":"Polymer Installation",
 		"items": [
 			"To use Polymer in your web project, you need a couple of things.",
-			"To get the main Polymer libraries: <code>bower install --save Polymer/polymer</code>",
+			"To get the main Polymer libraries: <code>bower install Polymer/polymer</code>",
 			"All you need to import to use a Polymer element is webcomponents.js"
 		]
 	},
@@ -88,7 +88,7 @@
 		"subtitle":"Data Binding",
 		"items": [
 			"Polymer elements also have their own sets of data that you can access and use as HTML.",
-			"The {{}} notation used in Angular is used for this.",
+			"The \"handlebars\" notation used in Angular is used for this.",
 			"You can also use this notation for functions: for example, to call a function when part of the element is clicked.",
 			"These functions are defined in the <code>Polymer({})</code> call mentioned before.",
 			"You can also define a publish object within the Polymer function that sets the public attributes of the element and their defaults."
