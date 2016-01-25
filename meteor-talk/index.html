@@ -6,11 +6,14 @@
 <link rel="stylesheet" href="bower_components/reveal-js/css/reveal.min.css" id="theme">
 <style>
 body {
-	background: url('background3.jpeg') no-repeat fixed center;
+	background: url('subackground.png') no-repeat fixed center;
 	background-size: cover;
 }
 code {
 	background-color: rgba(100,100,100,.7);
+}
+section {
+	background: rgba(50,50,50,.8);
 }
 </style>
 </head>
@@ -29,21 +32,21 @@ code {
 				<ul>
 					<li>A full-stack Javascript web framework</li>
 						<ul>
-							<li>Blaze Templating Engine (similar to Handlebars)</li>
+							<li>Blaze, React, or Angular</li>
 							<li>MongoDB</li>
 							<li>Node.js Backend</li>
 							<li>Command-line Tools</li>
 							<li>Packaging System</li>
 							<li>Deploying Server (apps can be published at [appname].meteor.com)</li>
 						</ul>
-						<li>NOT REST-based like Express</li>
+						<li>NOT REST-based like Express - requires external router to define traditional HTTP routes</li>
 				</ul>
 			</section>
 			<section>
 				<h2>Installation</h2>
 				<code>curl https://install.meteor.com/ | sh</code>
 				<ul>
-					<li>No official Windows support. For unoffical Windows support, there is win.meteor.com</li>
+					<li>Supports Linux, Mac, and (as of release 1.1) Windows -- visit https://www.meteor.com/install for Windows installation</li>
 					<li>You can also try Meteor in a browser at meteorpad.com</li>
 				</ul>
 			</section>
@@ -100,7 +103,7 @@ code {
 				<ul>
 					<li>Many popular client side libraries are available already as packages.</li>
 					<li>When you add a packages, the packages CSS and JS are automatically included in your project.</li>
-					<li>To add Bootstrap: <code>meteor add bootstrap</code></li>
+					<li>To add Bootstrap: <code>meteor add twbs:bootstrap</code></li>
 					<li>To search for a package: <code>meteor search [name]</code></li>
 					<li>You can also search Meteor packages at atmospherejs.com</li>
 				</ul>
@@ -112,7 +115,7 @@ code {
 				<ul>
 					<li>Meteor collections are stored on both the client (Minimongo) and server (Mongo) by default.</li>
 					<li>To declare a new collection (typically done on both client and server): <code>People = new Mongo.Collection("people");</code></li>
-					<li>Remember that this is NoSQL, so there is no such thing as a schema.</li>
+					<li>Remember that this is NoSQL, so there is no such thing as a schema (however, you can add schemas with packages such as collection2).</li>
 					<li>Standard methods such as insert, find, delete, update, upsert exist for these collections.</li>
 				</ul>
 			</section>
@@ -141,16 +144,6 @@ code {
 						<li>Integration with npm packages</li>
 						<li>Initial or periodic actions</li>
 					</ul>
-				</ul>
-			</section>
-			<section>
-				<h2>Integrating NPM Packages</h2>
-				<ul>
-					<li>Meteor allows use of npm packages by creating what's known as a "smart package".</li>
-					<li>To start, create a packages directory and then a directory for your smart package inside this.</li>
-					<li>Create a package.js file.</li>
-					<li>The package.js should contain a description of the package with <code>Package.describe</code>, an <code>Npm.depends</code>, and <code>Package.on_use</code> that adds other JS files to the package and exports variables.</li>
-					<li>Then do <code>meteor add [package name]</code> and the exported variables should be available server-side.</li>
 				</ul>
 			</section>
 		</section>
@@ -185,9 +178,19 @@ code {
 		<section>
 			<h2>Routing</h2>
 			<ul>
-				<li>Meteor by default isn't for single-page apps, thus it doesn't have any kind of routing built in.</li>
+				<li>Meteor by default isn't for single-page apps, thus it doesn't have any kind of routing bauilt in.</li>
 				<li>The <code>iron-router</code> package makes routing possible.</li>
-				<li>Using <code>Router.route</code>, you can choose which templates to display with each route.</li>
+				<li><a href="https://iron-meteor.github.io/iron-router/">Guide</a></li>
+			</ul>
+		</section>
+		<section>
+			<h2>Cool Packages</h2>
+			<ul>
+				<li><code>ecmascript</code> - Use ES2015 features regardless of browser</li>
+				<li><code>meteorhacks:npm</code> - Use npm packages easily with a package.json file</li>
+				<li><code>yogiben:admin</code> - Full admin interface for managing collection items</li>
+				<li><code>aldeed:collection2</code> - Attach schemas to Meteor collections</li>
+				<li><code>aldeed:autoform</code>Automatically generate forms for inserting and updating collections</li>
 			</ul>
 		</section>
 		<section>
@@ -204,49 +207,26 @@ code {
 			<section>
 				<h2>Disadvantages of Using Meteor</h2>
 				<ul>
-					<li>Still under heavy development</li>
-					<ul>
-						<li>Until the 1.0 release, each update brings drastic changes.</li>
-						<li>Recent updates have temporarily broken some packages.</li>
-					</ul>
-					<li>Can put a lot of strain on the client.</li>
 					<li>Only supports Mongo at the moment.</li>
+					<li>Can put a lot of strain on the client.</li>
 					<li>A little effort has to be taken with each app to make it secure for production.</li>
+					<li>Meteor's open-ended approach to development (different front-ends, packages, etc) can make existing apps confusing to maintain or update.</li>
+					<ul>
+						<a href="https://kadirahq.github.io/mantra/">Mantra,</a> an application architecture for Meteor, is aiming to fix this.</a>
+					</ul>
 				</ul>
-			</section>
-		</section>
-		<section>
-			<section>
-				<h2>Meteor Hackathon</h2>
-				<iframe class="vine-embed" src="https://vine.co/v/M0pTMahepvj/embed/simple" width="600" height="600" frameborder="0"></iframe><script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>
-			</section>
-			<section>
-				<h2>Meteor Hackathon</h2>
-				<img src="presentation4.jpg">
-			</section>
-			<section>
-				<h2>Meteor Hackathon</h2>
-				<img src="presentation1.jpg">
-			</section>
-			<section>
-				<h2>Meteor Hackathon</h2>
-				<img src="presentation2.jpg">
-			</section>
-			<section>
-				<h2>Meteor Hackathon</h2>
-				<img src="presentation3.png">
-			</section>
-			<section>
-				<h2>Meteor Hackathon</h2>
-				<img src="presentation5.jpg">
 			</section>
 		</section>
 		<section>
 			<h2>Additional Resources</h2>
 			<ul>
-				<li>https://www.discovermeteor.com/blog - Articles about Meteor concepts</li>
-				<li>http://crater.io - Meteor news</li>
-				<li>Meteor Devshop SF - Once a month, all talks are live-streamed and posted online afterwards</lI>
+				<li><a href="https://www.discovermeteor.com/blog">Discover Meteor Blog</a></li>
+				<li><a href="http://crater.io">Crater.io</a></li>
+				<li>Meteor Night (formerly Meteor Devshop SF) - talks are live streamed and posted to YouTube afterwards</li>
+				<li><a href="https://www.meteor.com/tutorials/blaze/creating-an-app">Official Meteor Tutorial</a></li>
+				<li><a href="https://www.meteor.com/tutorials/blaze/creating-an-app">Official Meteor Tutorial</a></li>
+				<li><a href="http://guide.meteor.com/">Meteor Guide</a></li>
+				<li><a href="http://docs.meteor.com/">Meteor Docs</a></li>
 			</ul>
 		</section>
 	</div>
