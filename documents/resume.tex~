@@ -20,15 +20,25 @@
 \smallskip
 
 \noindent
-An challenging, team-based internship, co-op, or part time position working on low-level software, electonics, or computer architecture during the school year or summer.
+A full-time position working on low-level software, electronics, or computer architecture starting in summer 2017.
 \medskip
 
 \noindent{\Large \bf Experience}
 \smallskip
 
+\centerline{{\large {\bf Google -- Software Engineering Intern} (Mountain View, CA) \hfill 5/16 to 8/16}}
+\noindent
+Worked on features to improve a machine learning algorithm for deciding whether to reuse data center parts.
+\smallskip
+
+\centerline{{\large {\bf OSU ElectroScience Lab -- Undergraduate Researcher} (Columbus, OH) \hfill 1/15 to 5/15, 1/16 to 5/16}}
+\noindent
+Tested and planned an RF tracking system using a Zigbee mesh network.
+\smallskip
+
 \centerline{{\large {\bf Raytheon SI -- Computer Science Engineering Intern} (Indialantic, FL) \hfill 8/15 to 12/15}}
 \noindent
-Reserching potential exploits in several native and browser-based applications.
+Researched potential exploits in several native and browser-based applications and worked on internal tools for exploit analysis.
 \smallskip
 
 \centerline{{\large {\bf Google -- Software Engineering Intern} (Mountain View, CA) \hfill 5/15 to 8/15}}
@@ -41,28 +51,18 @@ Created, debugged, and tested several new features to Google's iOS mobile ads SD
 Created a web application using Java, Play Framework, AngularJS, and MySQL to simplify the retrieval and optimization of data extraction.
 \smallskip
 
-\centerline{{\large {\bf all R friends -- Software Developer Intern} (Columbus, OH) \hfill 8/14 to 4/15}}
-\noindent
-Worked on various aspects of the company's backend system, including an automated text-messaging system and wiki.
-\smallskip
-
-\centerline{{\large {\bf OSU ElectroScience Laboratory -- Undergraduate Researcher} (Columbus, OH) \hfill 1/15 to 5/15}}
-\noindent
-Tested and planned an RF tracking system using a Zigbee mesh network.
-\smallskip
-
 \noindent{\Large \bf Education}\\
 \smallskip
-\centerline{{\large {\bf The Ohio State University} \hfill Expected Graduation: December 2017}}
+\centerline{{\large {\bf The Ohio State University} \hfill Expected Graduation: May 2017}}
 \noindent
-4.0 GPA, B.S. Electrical and Computer Engineering
+3.97 GPA, B.S. Electrical and Computer Engineering
 \medskip
 
 \noindent{{\Large {\bf Projects} (more information and source on Github)}}\\
+$\bullet$ {\bf WiFinder:} A robot that utilized two ESP8266 modules to drive towards the location of the best Wi-Fi dsignal for a given hotspot.\\
 $\bullet$ {\bf FEH Proteus Robot:} Designed, programmed, tested, and documented a fully autonomous robot designed to peform a series of tasks in a fictional candy factory. The robot won in the competition's elimination round.\\
-$\bullet$ {\bf Project Zen:} Created for the 2014 OSU hackathon, a set of robotic arms that can rake a zen garden controlled by a Leap Motion and visible through a web interface.\\
+$\bullet$ {\bf Laser Harp Hero:} A laser harp capable of playing multiple keys and types of scales and includes a Guitar Hero-style game.\\
 $\bullet$ {\bf Meteor Flies Drone:} A web application written in Meteor that allows many users to control a drone using two different control styles. Won Most Entertaining at Meteor hackathon.\\
-$\bullet$ {\bf FPGA Pong:} A pong game done entirely in Verilog that utilized timing, buttons, and VGA signals and ran on an Altera DE0 board.
 \medskip
 
 \noindent{{\Large \bf Technical Skills}}\\
@@ -78,7 +78,7 @@ $\bullet$ x86, MSP430 and ARM assembly languages and architectures, and CPU desi
 \medskip
 
 \noindent{{\Large \bf Honors and Activities}}\\
-$\bullet$ {\bf Engineering:} Open Source Club, Collegiate Web Developers Group (project leader), IEEE, Electronics Club (social chair), Dexterity 43210\\
+$\bullet$ {\bf Engineering:} Open Source Club (vice president), Collegiate Web Developers Group (vice president), IEEE, Electronics Club (social chair)\\
 $\bullet$ {\bf Music:} OSU Jazz Ensemble, Art Blakey Combo\\
 $\bullet$ {\bf Awards:} First Place Head to Head, OSU Fundamentals of Engineering for Honors robot competition\\
 $\bullet$ {\bf Designations:} OSU Honors Program, AP Scholar with Distinction\\
@@ -86,6 +86,7 @@ $\bullet$ {\bf Scholarships:} Maximus Scholar, Grasser Scholar, Hendrix Scholar,
 \medskip
 
 \noindent{{\Large \bf Relevant Coursework}}\\
-$\bullet$ {\bf Past:} Robotics, Software I/II, Differential Equations, Digital Design, Signals, Analog Circuitry, Advanced C Programming, LISP, Microcontrollers\\
+$\bullet$ {\bf Current:} Computer Architecture, Computer Networking, Mixed-Signal VLSI, Computing Ethics\\
+$\bullet$ {\bf Past:} Software I/II, Differential Equations, Advanced Digital Design, Signals, Intro to Electronics, Operating Systems, Microcontroller Lab\\
 
 \end{document}

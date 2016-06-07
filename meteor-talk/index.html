@@ -170,9 +170,9 @@ section {
 			<h2>Adding Reactivity</h2>
 			<ul>
 				<li>Meteor template functions automatically update when any collection is changed, but what if you want a non-collection element to be reactive?</li>
-				<li>The Meteor Deps package allows for creating your own reactive data sources.</li>
-				<li>To create a source, create an object with <code>Deps.Dependency</code>, and call the <code>depend()</code> function for get methods and <code>changed()</code> function for set methods.</li>
-				<li><code>Deps.autorun</code> provides a function that executes whenever a dependency is changed.</li>
+				<li>The Meteor Tracker allows for creating your own reactive data sources.</li>
+				<li>To create a source, create an object with <code>Tracker.Dependency</code>, and call the <code>depend()</code> function for get methods and <code>changed()</code> function for set methods.</li>
+				<li><code>Tracker.autorun</code> provides a function that executes whenever a dependency is changed.</li>
 			</ul>
 		</section>
 		<section>
@@ -223,7 +223,6 @@ section {
 				<li><a href="https://www.discovermeteor.com/blog">Discover Meteor Blog</a></li>
 				<li><a href="http://crater.io">Crater.io</a></li>
 				<li>Meteor Night (formerly Meteor Devshop SF) - talks are live streamed and posted to YouTube afterwards</li>
-				<li><a href="https://www.meteor.com/tutorials/blaze/creating-an-app">Official Meteor Tutorial</a></li>
 				<li><a href="https://www.meteor.com/tutorials/blaze/creating-an-app">Official Meteor Tutorial</a></li>
 				<li><a href="http://guide.meteor.com/">Meteor Guide</a></li>
 				<li><a href="http://docs.meteor.com/">Meteor Docs</a></li>
