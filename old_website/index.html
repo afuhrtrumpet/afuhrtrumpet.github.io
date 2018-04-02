@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Alex Fuhr</title>
+	<script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="app.js"></script>
+	<link rel="import" href="bower_components/font-roboto/roboto.html">
+	<link rel="import" href="bower_components/core-header-panel/core-header-panel.html">
+	<link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
+	<link rel="import" href="bower_components/paper-shadow/paper-shadow.html">
+	<link rel="import" href="bower_components/paper-toast/paper-toast.html">
+	<link rel="import" href="bower_components/paper-fab/paper-fab.html">
+	<link rel="import" href="bower_components/core-icons/core-icons.html">
+	<link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
+	<link rel="import" href="bower_components/core-icon-button/core-icon-button.html">
+	<link rel="import" href="bower_components/core-menu/core-menu.html">
+	<link rel="import" href="bower_components/core-item/core-item.html">
+	<link rel="import" href="bower_components/core-drawer-panel/core-drawer-panel.html">
+	<link rel="import" href="bower_components/core-animated-pages/core-animated-pages.html">
+	<link rel="import" href="bower_components/core-animated-pages/transitions/slide-from-right.html">
+	<link rel="import" href="bower_components/ajax-form/ajax-form.html">
+	<link rel="import" href="bower_components/paper-input/paper-input-decorator.html">
+	<link rel="import" href="bower_components/paper-input/paper-autogrow-textarea.html">
+	<link rel="import" href="bower_components/paper-button/paper-button.html">
+	<link rel="import" href="info-card.html">
+	<link rel="import" href="image-slider.html">
+	<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+
+<core-header-panel>
+	<core-toolbar class="medium-tall">
+	<core-icon-button icon="menu" onclick="document.querySelector('core-drawer-panel').togglePanel();" id="menuToggle"></core-icon-button>
+	<div flex>
+	<h1>Alex Fuhr</h1>
+	</div>
+	<i>engineer, developer, maker</i>
+	<div class="bottom fit" horizontal layout>
+		<paper-tabs selected="0" flex>
+				<paper-tab>Blog</paper-tab>
+				<paper-tab>About Me</paper-tab>
+				<paper-tab>Projects</paper-tab>
+				<paper-tab>Resume</paper-tab>
+			<paper-tab>Contact Me</paper-tab>
+		</paper-tabs>
+	</div>
+	</core-toolbar>
+	<paper-shadow z="2"></paper-shadow>
+	<div content>
+		<core-animated-pages transitions="slide-from-right" selected=0>
+			<section>
+				<div class="tiles">
+						<div class="card" slide-from-right>
+							<info-card id="12/23/14: End of Semester Updates">
+							<h2>12/23/14: End of Semester Updates</h2>
+								<p>Just finished a semester at OSU, and with that I will begin further updating my website with some of the projects and experiences I have had during that time.</p>
+								<p>First of all, I recently updated the website to be more SEO-friendly (and readable in terminal browsers!) through the use of <a href='https://github.com/techtribe/grunt-static-handlebars'>grunt-static-handlebars</a>. With this, I no longer need Angular to process my data, as it is compiled into a static HTML file from a Handlebars template. I will also be reworking the layout a bit to be a bit more mobile-friendly, among other things.</p>
+								<p>This semester has been filled with incredibly valuable learning experiences and opportunities. Most importantly:<ul><li>Built a robot to manipulate a zen garden at the OSU hackathon. This project led to a much deeper research project I am involved in, where my same group is taking the design further to create a modular prototyping machine that will have 3D printing and laser cutting functions, among others. You can track the development of this machine at our <a href='https://github.com/projectzen/3-Axis-Prototyping-Machine'>Github</a> and <a href='https://projectzen.xyz/'>website</a>.</li><li>Began learning about and working with FPGAs. I first worked with FPGAs through my intro ECE lab, where we built an audio keyboard on an Altera DE2. From this, I began learning Verilog using a DE0 board, first implementing Pong with VGA signals. Currently, I am reconstructing the Rhythm Heaven minigame <a href='https://www.youtube.com/watch?v=YrCTHodtzb4'>Lockstep</a> entirely with hardware.</li><li>Continued work with the medical center to create a lightweight image viewer. For this, I am using Python 2, GTK, and Cairo. Currently, the basic image display and zoom functionality is working, and I am working on using Cairo to draw masks.</li><li>Began an internship with <a href='http://allrfriends.com/'>all R friends</a>, where I am working on adding and improving functions to their backend system. Currently, I have built an automated text message system for the caretakers to use.</li></ul></p>
+								<p>I also have some exciting future plans coming up. Next semester, I start work as a research assistant at the OSU ElectroScience Laboratory, and this summer, I will be working as a software engineering intern at Google as part of the AdMob team!</p>
+							<image-slider>
+							</image-slider>
+							</info-card>
+						</div>
+						<div class="card" slide-from-right>
+							<info-card id="8/6/14: More Updates + End of Summer">
+							<h2>8/6/14: More Updates + End of Summer</h2>
+								<p>Changed some design aspects of the site, added more projects, updated the bio. Basically everything I've been doing within the last few months.</p>
+								<p>As of recently, I am at the end of a summer internship at BloomReach doing web development using their big data technologies. I had a great time working for the company and enjoyed experiencing startup culture, as well as the rest of the bay area! From many of the meetups, events, and hackathons I attended, I had a blast and enjoyed learning about new technologies as well as new ways to use the technologies I was already familiar with. I will definitely take my time here as motivation to bring myself towards greatness even further while at my second year of school.</p>
+								<p>Some of the photos of the things I have been doing for the past few months (including winning a robot competition at OSU) are shown below.</p>
+							<image-slider>
+								<img src="images/meteorhack/drone_crop.jpg"/>
+								<img src="images/robotpics/team.jpg"/>
+								<img src="images/kivame/demo.jpeg"/>
+								<img src="images/clique.jpg"/>
+							</image-slider>
+							</info-card>
+						</div>
+						<div class="card" slide-from-right>
+							<info-card id="8/4/14: Website Revamp!">
+							<h2>8/4/14: Website Revamp!</h2>
+								<p>So the website looks a bit different now.</p>
+								<p>I decided to switch from the old jQuery-UI based layout to one using Google&#39;#39; Polymer UI components and AngularJS. Polymer is definitely something new to me, but I learned it throughout last week and really enjoy the approach it takes in making web components modular, much like the old days of HTML, and can definitely see it being successful in the future. Right now some of the default components (like the top bar you see) can be a bit difficult to customize, but they are also using the flexbox layout system, which I am currently getting myself familiar with.</p>
+								<p>With AngularJS, I am attempting to derive all of this site&#39;#39; content from JSON and loading it into the Polymer-based template I have created. I have a JSON format that works well so far, but it will be interesting to see if that continues to suit my needs--I may even implement a web editor for this in the future.</p>
+							<image-slider>
+							</image-slider>
+							</info-card>
+						</div>
+				</div>
+			</section>
+			<section>
+				<div class="tiles">
+						<div class="card" slide-from-right>
+							<info-card id="Bio">
+							<h2>Bio</h2>
+								<p>Ever since I was young, I have always been eager to discover, learn, and make components of the world around me.</p>
+								<p>I first started discovering and working for my this goals in high school. It was there I discovered my interests in engineering and programming through taking computer science classes and helping the school robotics team with CAD and programming. Meanwhile, I challenged myself with advanced coursework in subjects such as physics, calculus, and chemistry. Near the end, I had my first experiences in the workplace with an IT internship at Multi-Color Corporation and a software development internship at Zakta, and also began to learn more advanced concepts on my own.</p>
+								<p>College brought forth a new wave of experiences, faces, and things to learn, and I begin my time at The Ohio State University by participating in the Fundamentals of Engineering for Honors (FEH) program. This challenging sequence of classes broadened my overall perspective of engineering while teaching me important skills such as technical writing and teamwork. In particular, I loved the labs focusing on electronics, and couldn't wait to learn and do more with the various tools I had worked with. So without hesitation, I jumped headfirst into the field by buying an Arduino kit and exploring the ins and outs of microcontroller-based development. By the end of the semester, I had completed my first major project: a control system for two different types of higher-voltage lighting (<a href='https://github.com/afuhrtrumpet/arduinochristmaslights'>link</a>). I also continued to develop my software skills by learning from talks at OSU's Open Source Club and participating in my first hackathon with a web-reading alarm clock application (<a href='https://github.com/afuhrtrumpet/osuhackathon2013'>link</a>).</p>
+								<p>The next semester I arrived eager to learn even more, and FEH brought just that with a challenging semester-long robot project, requiring teams of four to create a fully autonomous robot that can solve a sequence of tasks in under two minutes. I functioned as the main programmer and tester of the team, and throughout this semester we had our share of issues and speed bumps, but finished the final competition by earning first place in the elimination round. To find out more about this project, you can view it in the Projects tab. Throughout the semester, I also continued learning Arduino and web development through several different projects, and worked with the medical center's imaging department to create several useful plugins for ImageJ, an image processing program.</p>
+								<p>The summer after my first year involved an internship with BloomReach in Mountain View, CA. As someone who had never been to Silicon Valley before, the atmosphere of the area was amazing, with new skills to learn and people to meet everywhere. In addition to working on a challenging internal web application for data parsing here, I participated in three different hackathons. All three of these taught me about team dynamics and how to create something amazing in very little time. In the latter of these three hackathons, the Meteor summer hackathon, my team built a web application for simultaneous control of a drone that won us the prize “Most Entertaining”, and we presented as part of the Meteor Devshop SF the week after! (<a href='https://www.youtube.com/watch?v=2uAaiJGAK5w'>link</a>)</p>
+								<p>My second year at OSU so far has helped me grow even more in my studies. With my first ECE classes underway, I am learning critical core electrical engineering concepts, and am beginning to develop my skills in these in projects such as a Pong implementation on an FPGA. I also participated in two more hackathons, creating a gesture-controlled robotic zen garden (<a href='https://github.com/OHIOhackathon2014/Project_Zen'>link</a>) and conducting simulator (<a href='https://github.com/projectzen/leap-motion-composer'>link</a>). To continue developing my software skills, I started a part-time internship working on the backend system for disability services company all R friends. Meanwhile, I am continuing to work with OSU's image processing department, this time on a lightweight image viewer in GTK.</p>
+								<p>The next semester and beyond holds even further projects and opportunities. Supervised by Dr. Arnab Nandi, I will be part of a group of four building a modular CNC capable of 3D printing and other tasks. I also will begin a position as a research assistant in the OSU ElectroScience Laboratory. In May, I will be starting a software engineering internship at Google.</p>
+							<image-slider>
+							</image-slider>
+							</info-card>
+						</div>
+						<div class="card" slide-from-right>
+							<info-card id="Career Goals">
+							<h2>Career Goals</h2>
+								<p>My main goal is to help create and shape new technologies that improve the lives of millions of people. In doing this, I plan to use my skills in the most effective way possible, work for the good of everyone, and look for ways to change the course of the electronics and software industries for the better.</p>
+								<p>I am currently completing my bachelor's degree in Electrical and Computer Engineering at The Ohio State University. During the remainder of my time here, I plan to take on challenging classes that focus on digital design and circuits while giving me an overall broad perspective of the field. I also plan to complete a thesis project by the time I graduate. Following this, I plan to complete a research-based master's degree, and then enter industry with a challenging position focusing on digital design or embedded systems.</p>
+								<p>Of the fields I have explored so far, I enjoy low-level programming and digital design the most: working with underlying hardware as closely as possible lends itself a certain level of challenge but also freedom, and makes my work feel that much more rewarding when I understand everything that is happening. I am particularly interested in the rapidly growing industries of robotics, 3D printing, and wearables, as I feel we have only tapped the surface of what they offer. For example, 3D printing has made rapid prototyping easier than ever, but the technology is still not as accessible or capable as it could be. In addition, the precise mechanics used in 3D printing could be applied to a variety of unexplored applications. I look forward to working towards unlocking the untapped potential in these new technologies.</p>
+								<p>I am interested in working in an environment that is fast-paced, team-oriented, and is focused on forging new ground in an emerging embedded systems-related field, whether this be a large tech company or wearables startup. All the while, I will work with unrestrained motivation to solve difficult problems, and work for the benefit of both the company and the general public.</p>
+							<image-slider>
+							</image-slider>
+							</info-card>
+						</div>
+				</div>
+			</section>
+			<section>
+				<div class="tiles">
+						<div class="card" slide-from-right>
+							<info-card id="Leap Motion Conducting Simulator">
+							<h2>Leap Motion Conducting Simulator</h2>
+								<p>This project was created at TownHack 2014 in Columbus, Ohio. The code can be found <a href='https://github.com/projectzen/leap-motion-composer'>here</a>.</p>
+								<p>With this project our goal was to control the playback of music using conducting motions. We ran into many problems in figuring out how exactly to control music, but ended up with a working solutions that used VLC's HTTP API. Other ideas discussed were using MIDI signals to control Mixxx or to interface with Pure Data, but we ran into issues with Mixxx's documentation and getting sound stretching (altered speed without pitch change) working on Pure Data would have taken too much time. One problem in particular was CORS protection on VLC's API: our Ajax calls were being denied. To circumvent this we used a PHP script that served as the authentication mechanism for VLC.</p>
+								<p>The finished project utilized two different controls: the speed of the hand's motion to change the tempo of the music, and the height of the hand's motion to control the volume of the music. This change triggered every 4 beats in order to keep the music up to date but not call the API too much or misinterpret a single control.</p>
+								<p>Future goals for this project revolve around making in an entirely client-side application. This includes authenticating with VLC without the use of PHP, using beat-detection software to avoid manual tempo input, and better following of conducting controls (for example, holding a note if the user's hand stops moving).</p>
+							<image-slider>
+							</image-slider>
+							</info-card>
+						</div>
+						<div class="card" slide-from-right>
+							<info-card id="Autoscribe">
+							<h2>Autoscribe</h2>
+								<p>The goal of this project is to automatically create sheet music from the notes heard by a user. The project is still not completely accurate and user-friendly, but a working model exists using Pure Data and the Python library Abjad.</p>
+								<p>The Pure Data patch takes several inputs from the user: the number of beat subdivisions to record, the tempo, and the number of measurements per beat subdivision. The user then hits the start button, and can see the beat represented through a blinking dot. After pressing stop, the data is written to a text file that can then be interpreted by a Python script. This script constructs the sheet music and displays it to the user in PDF form.</p>
+							<image-slider>
+								<img src="images/autoscribe/puredata.png"/>
+								<img src="images/autoscribe/pdfresult.png"/>
+							</image-slider>
+							</info-card>
+						</div>
+						<div class="card" slide-from-right>
+							<info-card id="Project Zen: A Robotic Gesture-Controlled Zen Garden">
+							<h2>Project Zen: A Robotic Gesture-Controlled Zen Garden</h2>
+								<p>This project was created at OHI/O 2014. The code can be found <a href='https://github.com/OHIOHackathon2014/project_zen'>here</a>.</p>
+								<p>Mechanically, this utilized spare printer parts to do both the X and Y-axis motion, mounted by a wooden frame. These motors were driven by an H-bridge and controlled using an Arduino Uno. On the software side, the Arduino ran a sketch that used a one-byte control system to determine how to drive each motor, which was sent using the node-serialport library via a Meteor application. This Meteor app received signals from a Leap Motion on the front end using the LeapJS library and then used a two-point calculation to generate velocity signals for the Arduino. Following the hackathon, we learned from our experiences here and have begun work on a 3-axis CNC, supervised and funded by Dr. Arnab Nandi. A brief summary of the current project is available <a href='https://github.com/projectzen/3D-Printer'>here</a>.</p>
+							<image-slider>
+								<img src="images/projectzen/final.jpg"/>
+							</image-slider>
+							</info-card>
+						</div>
+						<div class="card" slide-from-right>
+							<info-card id="Meteor Flies Drone">
+							<h2>Meteor Flies Drone</h2>
+								<p>This project was created at the 2014 Meteor Summer Hackathon. It won in the category Most Entertaining. The code for this can be found <a href='https://github.com/afuhrtrumpet/meteorhack14'>here</a>.</p>
+								<p>This app utilizes the Twitch Plays Pokemon method of control to allow many users to control a drone at once. It provides two modes of control: anarchy (queue of commands) and democracy (popular voted command is used). In order to host this on Meteor&#39;#39; servers, PubNub was used to communicate between the Meteor server and a client server that is controlling the drone. The app was also demoed live at Meteor Devshop SF in July 2014.</p>
+							<image-slider>
+								<img src="images/meteorhack/drone_crop.jpg"/>
+								<img src="images/meteorhack/login.png"/>
+								<img src="images/meteorhack/anarchy.png"/>
+								<img src="images/meteorhack/democracy.png"/>
+							</image-slider>
+							</info-card>
+						</div>
+						<div class="card" slide-from-right>
+							<info-card id="KivaMe">
+							<h2>KivaMe</h2>
+								<p>This project was created at HackSummit 2014 in San Francisco. I worked on a team of 10 for this project, and managed the API layer in a Django application. The backend can be found <a href='https://github.com/afuhrtrumpet/hacksummit'>here</a> and the frontend can be found <a href='https://github.com/kvindasAB/kivame-ui'>here</a>.</p>
+								<p>This app was created in response to the Kiva challenge at the hackathon which involved creating a recommendation engine and UI for loans on Kiva that read data from various sources including Facebook. The team (because it was large) decided to split the application into separate frontend and backend servers to also make way for an iOS app. The application uses a Netflix-style UI to display different loan categories to the user, and utilizes an API that can be easily configurable to accomodate different categories.</p>
+							<image-slider>
+								<img src="images/kivame/demo.jpeg"/>
+								<img src="images/kivame/loginscreen.png"/>
+								<img src="images/kivame/mockup2.jpg"/>
+							</image-slider>
+							</info-card>
+						</div>
+						<div class="card" slide-from-right>
+							<info-card id="DAE Sickness?">
+							<h2>DAE Sickness?</h2>
+								<p>This project was created at Cardinal Health Codefest, and won the popular vote prize.</p>
+								<p>It provides an information service to patients, containing a "bulletin board" where they can share or see advice from others, a buddy system in which two patients with the same condition can sign up to email each other, and online news information about recent developments in the condition.</p>
+							<image-slider>
+								<img src="images/daesickness/searchbar.png"/>
+								<img src="images/daesickness/bulletin.png"/>
+								<img src="images/daesickness/online.png"/>
+							</image-slider>
+							</info-card>
+						</div>
+						<div class="card" slide-from-right>
+							<info-card id="IRC Bots">
+							<h2>IRC Bots</h2>
+								<p>Using node.js and <a href='https://github.com/martynsmith/node-irc'> this library</a>, I created several IRC bots to do several different tasks. This helped me get used to using node.js and several other Javascript libraries.</p>
+								<p>The bots:<ul><li><a href='https://github.com/afuhrtrumpet/quotesbot'>Quotes Bot</a> - A bot for keeping track of things said at meetups. The start and stop functionality is controlled by PMs from its owner, and the recording of quotes also happens through PM to prevent excessive messages in chat. It also connects with MongoDB to persistently store quotes via the Mongoose library.</li><li><a href='https://github.com/afuhrtrumpet/octocat-bot'>Octocat</a> - A bot for retrieving a Github search result. Operates on the command 'gh [search term]', and reports the first result in chat. Used the Github API via the requests package in node.</li><li><a href='https://github.com/afuhrtrumpet/hangman-bot'>Hangman Bot</a> - Plays a game of hangman with members of the chat. Can take guesses for both letter and word, show status, and show remaining letters</li></ul>.</p>
+							<image-slider>
+							</image-slider>
+							</info-card>
+						</div>
+						<div class="card" slide-from-right>
+							<info-card id="Arduino Ocarina">
+							<h2>Arduino Ocarina</h2>
+								<p>Using a Sparkfun MIDI shield and a Wii Nunchuk, I replicated the ocarina from the Legend of Zelda series with an Arduino. The code for this is located <a href='https://github.com/afuhrtrumpet/arduino-ocarina'>here</a>, and contains songs from both Ocarina of Time and Majora&#39;#39; Mask</p>
+								<p>I ran into several interesting challenges with this. Parsing songs with JSON was not the easiest task to do, and I was not initially able to do this with the existing libraries as of January, but used a new library that appeared several months later to parse JSON strings. Memory management was (and still is) also an issue--the program was mysteriously not running properly until I tried running it on an Arduino Mega. I may still look into ways to cut down on memory usage, but the variety of songs held in memory already make this difficult.</p>
+							<image-slider>
+							</image-slider>
+							</info-card>
+						</div>
+						<div class="card" slide-from-right>
+							<info-card id="OSU FEH Robot">
+							<h2>OSU FEH Robot</h2>
+								<p>This robot was created as a part of the FEH (Fundamentals of Engineering Honors) robot competition at the Ohio State University. The robot won first place in the elimination round of the competition with a score of 89 out of 100 possible points.</p>
+								<p>The tasks required included pressing a button repeatedly, turning a switch from right to left, picking up a skid, placing the skid in a container, dropping a small spoon in a bin identified by a color on the floor, and pulling out a pin lodged in a pipe.</p>
+								<p>I worked on the code and testing of this robot. The code is located <a href='https://github.com/afuhrtrumpet/FEHRobotCode'>here</a>. It was written in C++ for the internally developed Proteus board, and utilized a modular sequence of steps using input from multiple sensors.</p>
+							<image-slider>
+								<img src="images/robotpics/robot.png"/>
+								<img src="images/robotpics/team.jpg"/>
+								<img src="images/robotpics/cad.png"/>
+								<img src="images/robotpics/finals.jpg"/>
+								<img src="images/robotpics/awards.jpg"/>
+							</image-slider>
+							</info-card>
+						</div>
+						<div class="card" slide-from-right>
+							<info-card id="Christmas Lighting, Arduino Style">
+							<h2>Christmas Lighting, Arduino Style</h2>
+								<p>This project uses an Arduino to control both EL wire and an RGB (non-addressable) LED strip simultaneously. It also reads input from a potentiometer, two buttons, a PIR sensor, and displays text to an LCD screen. The wiring diagram is show below.</p>
+								<p>The source code for each program can be found <a href = 'https://github.com/afuhrtrumpet/arduinochristmaslights'>here</a>.<br></p>
+								<p>The first program does not utilize the buttons or LCD. It gradually fades the LED strip through the entire color spectrum and blinks the EL wire in an interval specified by the position of the potentiometer. After doing this for a certain amount of time, both components shut off to save power. They are reactivated when the PIR sensor detects motion.</p>
+								<p>The second program performs similarly to the first program, but at the start it asks the user to input a sequence of colors by twisting the potentiometer to specify levels of red, green, and blue. After each color has been entered, the user can hit the bottom button to add another color or the top button to finish and start the sequence. Then, the EL wire performs as described in the first program while the LED strip switches between the user-defined sequence of colors in the same time interval the EL wire blinks. Both lights shut off after a certain period of time to wait for motion. The user can also press the top button during the light sequence to enter a new sequence of colors.</p>
+								<p>I had my fair share of problems and issues during the implementation of this project. Here are some of the ones I solved along the way:</p>
+								<p><ul><li>The diode on the Arduino burned off due to a short circuit of the 12V power required to light the LED strip. I discovered that the other end of the strip connectors were also wired to ground, causing the short circuit.</li><li>The Arduino could not supply the power required to control the LED strip or EL wire. To solve this, I used an relay to switch on and off the power of the 9V inverter to the EL wire and hooked a 12V power supply up to the Arduino and used N-channel MOSFETs to control the power.</li></ul></p>
+								<p>And some improvements that could still be made:</p>
+								<p><ul><li>Two potentiometers should be used: one to set the colors, and one to control the blink delay. In the current configuration, for example, if blue is set to 0 in the last color added and the user forgets to set the potentiometer back to a non-zero value, the blinking occurs faster than the relay can handle, causing a buzzing sound.</li><li>The option to have the LED strip fade could still exist, or an option to have the strip fade between colors could be added.</li><li>For some reason when setting colors, a low blue value makes the LED strip blink rapidly between a blue and non-blue color.</li><li>The relay used to control the EL wire is noisy. Alternate control methods could be looked into for this.</li></ul></p>
+							<image-slider>
+								<img src="images/christmaslights.png"/>
+							</image-slider>
+							</info-card>
+						</div>
+						<div class="card" slide-from-right>
+							<info-card id="Web-Based Alarm Clock">
+							<h2>Web-Based Alarm Clock</h2>
+								<p>This project was created as a team of 4 for the OSU 2013 hackathon and can be found <a href = 'https://github.com/afuhrtrumpet/OSUHackathon2013'>here</a>.</p>
+								<p>In this Windows application. The user can customize an alarm clock sequence to read text or web data by adding modules and delays in a timeline. The modules included are weather, simple text, RSS, and calendar, but many more could be created simply by implementing the IModule interface. After that, they simply must be put into the project directory--no modification of any of the program files needed.</p>
+								<p>Future goals for this project include porting it to mobile (where it really should belong, but no one on the team was experienced in mobile development) platforms such as Android and Windows Phone, as well as adding more modules and cleaning up the interface to be more user-friendly. The application could also take voice commands, which we considered adding at the hackathon but Microsoft&#39;#39; speech-to-text library included in C# was not accurate enough.</p>
+							<image-slider>
+								<img src="images/alarmclockpics/clockadjust.png"/>
+								<img src="images/alarmclockpics/clockplaying.png"/>
+								<img src="images/alarmclockpics/initialscreen.png"/>
+								<img src="images/alarmclockpics/rsssetup.png"/>
+								<img src="images/alarmclockpics/weathersetup.png"/>
+							</image-slider>
+							</info-card>
+						</div>
+						<div class="card" slide-from-right>
+							<info-card id="IR Frequency Detector">
+							<h2>IR Frequency Detector</h2>
+								<p>This project was created with another person for the first semester of Fundamentals of Engineering Honors at OSU and can be found <a href = ;https://github.com/afuhrtrumpet/SDP;>here.</a></p>
+								<p>The goal of this project was to detect one of 5 different possible frequencies using the FEH Proteus board and an IR receiver. The documentation can be found <a href ='/Viewer.js/#../documents/SDP Documentation.odt'>here</a>. (note: the viewer displays the numbering incorrectly)</p>
+							<image-slider>
+							</image-slider>
+							</info-card>
+						</div>
+				</div>
+			</section>
+			<section>
+				<div class="tiles">
+						<div class="card" slide-from-right>
+							<info-card id="Resume">
+							<h2>Resume</h2>
+								<p><iframe src='https://docs.google.com/viewer?srcid=0B3bha6podVHJYzdPSng2MU52V3M&pid=explorer&efh=false&a=v&chrome=false&embedded=true' width='100%' height='480'></iframe></p>
+							<image-slider>
+							</image-slider>
+							</info-card>
+						</div>
+						<div class="card" slide-from-right>
+							<info-card id="Downloads">
+							<h2>Downloads</h2>
+								<p><a href = 'documents/resume.pdf'>PDF</a><br><a href = 'documents/resume.tex'>LaTeX Source</a></p>
+							<image-slider>
+							</image-slider>
+							</info-card>
+						</div>
+				</div>
+			</section>
+			<section>
+				<div class="card" slide-from-right>
+					<info-card id="Contact Me">
+					<h2>Contact Me</h2>
+					<form id="contactform" is="ajax-form" action="https://getsimpleform.com/messages?form_api_token=3e58e5bdcc192dd90ea2137a28ed95e3" method="post">
+							<paper-input-decorator floatingLabel label="Name (required)">
+								<input type='text' name='name' required/>
+							</paper-input-decorator>
+							<paper-input-decorator floatingLabel label="Email (optional, leave if you want a response)">
+								<input type='text' name='email' />
+							</paper-input-decorator>
+							<paper-input-decorator floatingLabel label="Message (required)">
+								<paper-autogrow-textarea>
+									<textarea name="message" required></textarea>
+								</paper-autogrow-textarea>
+							</paper-input-decorator>
+
+							<paper-button><input type="submit"/></paper-button>
+						</form>
+					</info-card>
+				</div>
+			</section>
+		</core-animated-pages>
+	</div>
+</core-header-panel>
+<paper-toast id="toast" text="Form submission was successful!"></paper-toast>
+</div>
+</body>
+</html>

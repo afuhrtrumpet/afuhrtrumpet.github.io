@@ -34,7 +34,7 @@
 			"This project was created at Cardinal Health Codefest, and won the popular vote prize.",
 			"It provides an information service to patients, containing a \"bulletin board\" where they can share or see advice from others, a buddy system in which two patients with the same condition can sign up to email each other, and online news information about recent developments in the condition."
 		],
-		"images": [
+ 		"images": [
 			"images/daesickness/searchbar.png",
 			"images/daesickness/bulletin.png",
 			"images/daesickness/online.png"
