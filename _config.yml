@@ -25,9 +25,10 @@ github_username: afuhrtrumpet
 # Build settings
 markdown: kramdown
 remote_theme: fongandrew/hydeout
-# theme: jekyll-theme-hydeout
+#theme: jekyll-theme-hydeout
 plugins:
   - jekyll-feed
+  - jeykll-paginate
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
